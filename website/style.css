@@ -1,0 +1,38 @@
+body {
+    background-color: #515050; 
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #fff; 
+}
+
+
+h1 {
+    text-align: center;
+    color: #fff;
+    animation: blink 2s linear infinite;
+}
+
+
+.social-icons {
+    list-style-type: none;
+    padding: 0;
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    margin-top: 50px;
+}
+
+.social-icons li {
+    margin-right: 10px; 
+}
+
+.social-icon {
+    width: 100px;
+    height: auto; 
+}
+
+.social-icon:hover {
+    transform: scale(1.2); /* Powiększ ikonkę o 20% */
+}
+

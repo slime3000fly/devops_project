@@ -1,0 +1,85 @@
+---
+
+- name: Server Installation and Configuration
+  hosts: all
+  gather_facts: no
+  become: yes
+
+  tasks:
+    - name: Update package list
+      apt:
+        update_cache: yes
+    
+    - name: Upgrade packages
+      apt:
+        upgrade: yes
+    
+    - name: read valut
+      ansible.builtin.include_vars:
+          file: secret.yml
+
+    - name: Add admin account
+      ignore_errors: yes
+      user:
+        name: admin
+        password: "{{ admin_password | password_hash('sha512')}}" # encrypted password
+        shell: /bin/bash
+        groups: sudo
+        append: yes
+
+    - name: Install required system packages
+      apt:
+        pkg:
+          - apt-transport-https
+          - ca-certificates
+          - curl
+          - software-properties-common
+          - python3-pip
+          - virtualenv
+          - python3-setuptools
+        state: latest
+        update_cache: true
+
+    - name: add GPG key
+      apt_key:
+        url: https://download.docker.com/linux/ubuntu/gpg
+        state: present
+
+    - name: add docker repository to apt
+      apt_repository:
+        repo: deb https://download.docker.com/linux/ubuntu bionic stable
+        state: present
+
+    - name: Install Docker Module for Python
+      pip:
+        name: docker
+
+    - name: install docker
+      apt:
+        name: "{{item}}"
+        state: latest
+        update_cache: yes
+      loop:
+        - docker-ce
+        - docker-ce-cli
+        - containerd.io
+        
+    - name: Start Docker service
+      systemd:
+        name: docker
+        state: started
+
+- name: Deploy docker image
+  hosts: master_server
+  tasks:
+   - name: pull image
+     docker_image:
+      name: slime3000fly/apache_website
+      source: pull
+
+   - name: run image
+     docker_container:
+      name: webiste
+      image: slime3000fly/apache_website:latest
+      ports: 
+        - "80:80"
