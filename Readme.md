@@ -1,0 +1,63 @@
+# Project README: Environment Configuration for Internet Sites
+
+## Project Description
+The goal of this project is to demonstrate the capability of configuring environments for hosting internet sites. Currently, there is a "VM" folder that contains instructions to automatically create a Virtual Machine (VM) on Google Cloud Platform (GCP), download an operating system image, and launch a website accessible from the internet. 
+
+- GCE folder: Contains instructions to automatically create a Virtual Machine (VM) on Google Compute Engine (GCE), download an operating system image, and launch a website. This environment configuration checks if the docker image is up to date
+- GKE folder: Demonstrates the setup of a Kubernetes cluster using Google Kubernetes Engine (GKE) for hosting containerized website.
+
+## CI/CD
+CI/CD pipelines have been set up using GitHub Actions. Any change in the repository triggers the pipeline to start, resulting in the creation of a new Docker image that is then published to Docker Hub
+
+## Prerequisites
+To install and configure this project, you need to meet the following prerequisites:
+
+1. A Google Cloud Platform (GCP) account with the appropriate permissions for creating and managing virtual machines.
+2. A GCP API key that allows the creation of virtual machines.
+
+## Folder list
+1. [GCE](#installation-and-Configuration-GCP)
+2. [GKE](##installation-and-Configuration-GKE)
+
+### Installation and Configuration GCP
+#### To run this configuration you must have ansible, terraform installed
+1. Clone this project to your local machine:
+   ```shell
+   git clone
+2. Copy GCP API key to main folder
+3. Navigate to folder with setup.
+     ```shell
+    cd GCE/infra
+4. Run bash script
+     ```shell
+    bash RUN.bash
+5. To connect to the page, open a web browser and enter:
+    ```shell
+    http://YOUR_MACHINE_IP
+
+### Installation and Configuration GKE
+#### To run this configuration you must have kubernetes, terraform installed
+
+1. Clone this project to your local machine:
+   ```shell
+   git clone
+2. Copy GCP API key to main folder
+3. Navigate to folder with setup.
+     ```shell
+    cd GKE/infra
+4. Run bash script
+     ```shell
+    bash RUN.bash
+5. Log in to the GCP Console:
+6. Navigate to the "Kubernetes Engine" Section
+7. Find my-gke-cluster
+8. Go to the "Services & Ingress" Tab
+9. Locate the Public IP Address
+    In the "Services & Ingress" section, you will find your Load Balancer along with its public IP address. It will be displayed next to the service name. Click on it to get more details.
+10. Connect to the page
+    ```shell
+    http://IP_address
+
+## Secrets
+admin acconut password - admin
+ansible valut password - password
