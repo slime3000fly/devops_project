@@ -13,7 +13,7 @@
     - name: Upgrade packages
       apt:
         upgrade: yes
-  
+    
     - name: read valut
       ansible.builtin.include_vars:
           file: secret.yml
@@ -71,12 +71,17 @@
 
 - name: Deploy docker image
   hosts: all
-  become: yes
+  become: true
   tasks:
    - name: pull image
      docker_image:
       name: slime3000fly/apache_website
       source: pull
+
+   - name: Pull the Watchtower Docker image
+     docker_image:
+        name: containrrr/watchtower:latest
+        source: pull
 
    - name: run image
      docker_container:
@@ -84,3 +89,15 @@
       image: slime3000fly/apache_website:latest
       ports: 
         - "80:80"
+
+   - name: Deploy Watchtower container
+     docker_container:
+       name: watchtower
+       image: containrrr/watchtower:latest
+       volumes:
+         - /var/run/docker.sock:/var/run/docker.sock 
+       detach: yes  
+       restart_policy: always 
+       env:
+        WATCHTOWER_POLL_INTERVAL: 1m
+
