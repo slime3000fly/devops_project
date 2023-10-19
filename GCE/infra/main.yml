@@ -77,9 +77,23 @@
       name: slime3000fly/apache_website
       source: pull
 
+   - name: Pull the Watchtower Docker image
+     docker_image:
+        name: containrrr/watchtower:latest
+        source: pull
+
    - name: run image
      docker_container:
       name: webiste
       image: slime3000fly/apache_website:latest
       ports: 
         - "80:80"
+
+   - name: Deploy Watchtower container
+     docker_container:
+       name: watchtower
+       image: containrrr/watchtower:latest
+       volumes:
+         - /var/run/docker.sock:/var/run/docker.sock 
+       detach: yes  
+       restart_policy: always 
