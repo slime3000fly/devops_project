@@ -76,5 +76,5 @@ To install and configure this project, you need to meet the following prerequisi
     http://VirtualMachine_IP_address
 
 ## Secrets
-admin acconut password - admin \n
+admin acconut password - admin/n
 ansible valut password - password
