@@ -18,6 +18,7 @@ To install and configure this project, you need to meet the following prerequisi
 ## Folder list
 1. [GCE](#installation-and-Configuration-GCP)
 2. [GKE](##installation-and-Configuration-GKE)
+3. [Vagrant)(##installation-and-Configuration-Vagrant)
 
 ### Installation and Configuration GCP
 #### To run this configuration you must have ansible, terraform installed
@@ -58,6 +59,22 @@ To install and configure this project, you need to meet the following prerequisi
     ```shell
     http://IP_address
 
+### Installation and Configuration GKE
+#### To run this configuration you must have ansible, vagrant installed
+
+1. Clone this project to your local machine:
+   ```shell
+   git clone
+2. Navigate to folder with setup.
+     ```shell
+    cd Vagrant/infra
+4. Type command
+     ```shell
+    vagrant up
+5. Connect to the page
+   ```shell
+    http://VirtualMachine_IP_address
+
 ## Secrets
-admin acconut password - admin
+admin acconut password - admin \n
 ansible valut password - password
