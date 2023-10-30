@@ -4,5 +4,5 @@ starlit-cycle*.json
 terraform.tfstate*
 .terraform.lock.hcl
 .vagrant
-.terraform
+.terraform*
 tmp
