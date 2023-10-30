@@ -1,6 +1,6 @@
 resource "google_container_cluster" "DevOps_cluster" {
   name                     = "devops-cluster"
-  location                 = "europe-central2-a"
+  location                 = var.gcp_zone
   initial_node_count       = 2
   networking_mode          = "VPC_NATIVE"
   network                  = google_compute_network.main.self_link
