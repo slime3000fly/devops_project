@@ -1,2 +1,0 @@
-gcp_key = "dupa"
-gcp_project = "oo"

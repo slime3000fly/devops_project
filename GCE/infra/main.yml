@@ -3,6 +3,7 @@
 - name: Server Installation and Configuration
   hosts: all
   gather_facts: no
+  remote_user: root
   become: yes
 
   tasks:
