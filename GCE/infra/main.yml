@@ -71,7 +71,10 @@
         state: started
 
 - name: Deploy docker image
-  hosts: master_server
+  hosts: all
+  gather_facts: no
+  remote_user: root
+  become: yes
   tasks:
    - name: pull image
      docker_image:
