@@ -1,5 +1,22 @@
 # Project README: Environment Configuration for Internet Sites
 
+## Table of Contents
+
+1. [Project Description](#project-description)
+2. [CI/CD](#cicd)
+3. [Prerequisites](#prerequisites)
+4. [Folder list](#folder-list)
+    - [GCE](#installation-and-configuration-gcp)
+    - [GKE](#installation-and-configuration-gke)
+    - [Vagrant](#installation-and-configuration-vagrant)
+5. [Installation and Configuration GCP](#installation-and-configuration-gcp)
+    - [To run this configuration you must have ansible, terraform installed](#to-run-this-configuration-you-must-have-ansible-terraform-installed)
+6. [Installation and Configuration GKE](#installation-and-configuration-gke)
+    - [To run this configuration you must have kubernetes, terraform installed](#to-run-this-configuration-you-must-have-kubernetes-terraform-installed)
+7. [Installation and Configuration GKE](#installation-and-configuration-gke)
+    - [To run this configuration you must have ansible, vagrant installed](#to-run-this-configuration-you-must-have-ansible-vagrant-installed)
+8. [Secrets](#secrets)
+
 ## Project Description
 The goal of this project is to demonstrate the capability of configuring environments for hosting internet sites. Currently, there is a "VM" folder that contains instructions to automatically create a Virtual Machine (VM) on Google Cloud Platform (GCP), download an operating system image, and launch a website accessible from the internet. 
 
