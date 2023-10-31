@@ -10,11 +10,8 @@
     - [GKE](#installation-and-configuration-gke)
     - [Vagrant](#installation-and-configuration-vagrant)
 5. [Installation and Configuration GCP](#installation-and-configuration-gcp)
-    - [To run this configuration you must have ansible, terraform installed](#to-run-this-configuration-you-must-have-ansible-terraform-installed)
 6. [Installation and Configuration GKE](#installation-and-configuration-gke)
-    - [To run this configuration you must have kubernetes, terraform installed](#to-run-this-configuration-you-must-have-kubernetes-terraform-installed)
 7. [Installation and Configuration GKE](#installation-and-configuration-gke)
-    - [To run this configuration you must have ansible, vagrant installed](#to-run-this-configuration-you-must-have-ansible-vagrant-installed)
 8. [Secrets](#secrets)
 
 ## Project Description
