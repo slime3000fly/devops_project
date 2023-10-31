@@ -1,5 +1,16 @@
 # Project README: Environment Configuration for Internet Sites
 
+## Table of Contents
+
+1. [Project Description](#project-description)
+2. [CI/CD](#cicd)
+3. [Prerequisites](#prerequisites)
+4. [Folder list](#folder-list)
+5. [Installation and Configuration GCP](#installation-and-configuration-gcp)
+6. [Installation and Configuration GKE](#installation-and-configuration-gke)
+7. [Installation and Configuration GKE](#installation-and-configuration-gke)
+8. [Secrets](#secrets)
+
 ## Project Description
 The goal of this project is to demonstrate the capability of configuring environments for hosting internet sites. Currently, there is a "VM" folder that contains instructions to automatically create a Virtual Machine (VM) on Google Cloud Platform (GCP), download an operating system image, and launch a website accessible from the internet. 
 
