@@ -44,8 +44,13 @@ resource "google_compute_instance" "devops" {
   tags = ["http-server","https-server"]
 }
 
-# Get external ip address of master_node
-# resource "local_file" "external_ip" {
-#     content  = google_compute_instance.devops.network_interface.0.access_config.0.nat_ip
-#     filename = "../../ip.txt"
-# }
+# Create Snapshot
+resource "google_compute_snapshot" "devops_snapshot" {
+  name = "devops-snapshot"
+  zone = var.gcp_zone
+  chain_name = "snapshot-chain"
+  storage_locations = [var.gcp_region]
+  source_disk = google_compute_instance.devops.boot_disk[0].source
+}
+
+
