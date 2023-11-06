@@ -27,12 +27,13 @@ To install and configure this project, you need to meet the following prerequisi
 2. A GCP API key that allows the creation of virtual machines.
 
 ## Folder list
-1. [GCE](#installation-and-Configuration-GCP)
+1. [GCE](#installation-and-Configuration-GCE)
 2. [GKE](##installation-and-Configuration-GKE)
 3. [Vagrant](##installation-and-Configuration-Vagrant)
 
-### Installation and Configuration GCP
+### Installation and Configuration GCE
 #### To run this configuration you must have ansible, terraform installed
+#### You need an API key for GCE and access to Secret Manager
 1. Clone this project to your local machine:
    ```shell
    git clone
