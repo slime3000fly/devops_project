@@ -52,5 +52,3 @@ resource "google_compute_snapshot" "devops_snapshot" {
   storage_locations = [var.gcp_region]
   source_disk = google_compute_instance.devops.boot_disk[0].source
 }
-
-
