@@ -89,5 +89,4 @@ To install and configure this project, you need to meet the following prerequisi
 
 ## Secrets
 admin acconut password - admin  
-
 ansible valut password - password

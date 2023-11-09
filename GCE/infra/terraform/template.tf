@@ -2,8 +2,8 @@
 #     name        = "devops-template"
 #     machine_type = "e2-small"
 #     disk {
-#         source_image = google_compute_image.my_image.self_link
-        
+#         # source_image = google_compute_image.my_image.self_link
+#         source_image = "ubuntu-os-cloud/ubuntu-2004-lts"
 #     }
 #     network_interface {
 #         network = "default"
