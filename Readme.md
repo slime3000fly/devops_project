@@ -9,7 +9,7 @@
 5. [Installation and Configuration GCP](#installation-and-configuration-gce)
 6. [Installation and Configuration GKE](#installation-and-configuration-gke)
 7. [Installation and Configuration Vagrant](#installation-and-configuration-Vagrant)
-8. [Installation and Configuration Static page (bucket)](#installation-and-configuration-static-page-(bucket))
+8. [Installation and Configuration Static page (bucket)](#installation-and-configuration-static-page-bucket)
 9. [Secrets](#secrets)
 
 ## Project Description
