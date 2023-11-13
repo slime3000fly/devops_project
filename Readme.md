@@ -84,10 +84,6 @@ To install and configure this project, you need to meet the following prerequisi
    ```shell
     http://VirtualMachine_IP_address
 
-## Secrets
-admin acconut password - admin  
-ansible valut password - password
-
 ## Installation and Configuration Static page (bucket)
 ### To run this configuration you must have terrafrom installed
 1. Clone this project to your local machine:
@@ -102,3 +98,7 @@ ansible valut password - password
     bash RUN.bash
 5. URL to page is:  
     https://storage.googleapis.com/my_uniqe_devops_static_name/index.html
+
+## Secrets
+admin acconut password - admin  
+ansible valut password - password
