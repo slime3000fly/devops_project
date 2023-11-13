@@ -91,3 +91,18 @@ To install and configure this project, you need to meet the following prerequisi
 ## Secrets
 admin acconut password - admin  
 ansible valut password - password
+
+### Installation and Configuration Static page (bucket)
+#### To run this configuration you must have terrafrom installed
+1. Clone this project to your local machine:
+   ```shell
+   git clone
+2. Copy GCP API key to main folder
+3. Navigate to folder with setup.
+     ```shell
+    cd Static
+4. Run bash script
+     ```shell
+    bash RUN.bash
+5. URL to page is 
+    https://storage.googleapis.com/my_uniqe_devops_static_name/index.html
