@@ -44,7 +44,8 @@ To install and configure this project, you need to meet the following prerequisi
 4. Run bash script
      ```shell
     bash RUN.bash
-5. To connect to the page, open a web browser and enter:
+5. Enter the password for Ansible Vault when needed
+6. To connect to the page, open a web browser and enter:
     ```shell
     http://YOUR_MACHINE_IP
 

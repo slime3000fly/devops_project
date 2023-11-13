@@ -37,16 +37,8 @@ resource "google_compute_instance" "devops" {
   }
 
   provisioner "local-exec" {
-    command = "ansible-playbook -i ${google_compute_instance.devops.network_interface.0.access_config.0.nat_ip}, --private-key ${local.private_key_path} ../main.yml"
+    command = "ansible-playbook -i ${google_compute_instance.devops.network_interface.0.access_config.0.nat_ip}, --private-key ${local.private_key_path} --ask-vault-pass ../main.yml"
   }
 
   tags = ["http-server","https-server"]
-}
-
-resource "google_compute_snapshot" "devops_snapshot" {
-  name = "devops-snapshot"
-  zone = var.gcp_zone
-  chain_name = "snapshot-chain"
-  storage_locations = [var.gcp_region]
-  source_disk = google_compute_instance.devops.boot_disk[0].source
 }
