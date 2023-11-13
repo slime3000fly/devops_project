@@ -46,9 +46,18 @@
         repo: deb https://download.docker.com/linux/ubuntu bionic stable
         state: present
 
+    - name: pip upgrade
+      pip:
+        name: pip
+        state: latest
+
     - name: Install Docker Module for Python
       pip:
         name: docker
+
+    - name: Install Docker-compose Module for Python
+      pip:
+        name: docker-compose
 
     - name: Install docker-compose
       remote_user: ubuntu
@@ -79,6 +88,6 @@
 
     - name: deploy Docker Compose stack
       community.docker.docker_compose:
-        project_src: ./
+        project_src: /
         files:
         - docker-compose.yml

@@ -1,5 +1,7 @@
 # Use orffical apache image
 FROM httpd:latest
 
-# Copy wevsite file to apache
+# Copy website file to apache
 COPY ../website /usr/local/apache2/htdocs/
+
+# Copy config file to container

@@ -7,18 +7,23 @@ services:
     command: --interval 30
     restart: always
 
+  apache:
+    image: slime3000fly/apache_website:latest
+    ports:
+      - "80:80"
+    restart: always
+
+  prometheus:
+    image: prom/prometheus
+    ports: 
+      - "9090:9090"
+    volumes:
+      - /etc/prometheus.yml
+
   grafana:
     image: grafana/grafana
     ports:
       - "3000:3000"
     environment:
       - GF_SECURITY_ADMIN_PASSWORD=yourpassword
-    volumes:
-      - /grafana/data:/var/lib/grafana
-    restart: always
-
-  apache:
-    image: slime3000fly/apache
-    ports:
-      - "80:80"
     restart: always
