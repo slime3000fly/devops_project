@@ -6,10 +6,11 @@
 2. [CI/CD](#cicd)
 3. [Prerequisites](#prerequisites)
 4. [Folder list](#folder-list)
-5. [Installation and Configuration GCP](#installation-and-configuration-gcp)
+5. [Installation and Configuration GCP](#installation-and-configuration-gce)
 6. [Installation and Configuration GKE](#installation-and-configuration-gke)
 7. [Installation and Configuration Vagrant](#installation-and-configuration-Vagrant)
-8. [Secrets](#secrets)
+8. [Installation and Configuration Static page (bucket)](#installation-and-configuration-static-page-(bucket))
+9. [Secrets](#secrets)
 
 ## Project Description
 The goal of this project is to demonstrate the capability of configuring environments for hosting internet sites. Currently, there is a "VM" folder that contains instructions to automatically create a Virtual Machine (VM) on Google Cloud Platform (GCP), download an operating system image, and launch a website accessible from the internet. 
@@ -25,11 +26,6 @@ To install and configure this project, you need to meet the following prerequisi
 
 1. A Google Cloud Platform (GCP) account with the appropriate permissions for creating and managing virtual machines.
 2. A GCP API key that allows the creation of virtual machines.
-
-## Folder list
-1. [GCE](#installation-and-Configuration-GCE)
-2. [GKE](##installation-and-Configuration-GKE)
-3. [Vagrant](##installation-and-Configuration-Vagrant)
 
 ### Installation and Configuration GCE
 #### To run this configuration you must have ansible, terraform installed
@@ -104,5 +100,5 @@ ansible valut password - password
 4. Run bash script
      ```shell
     bash RUN.bash
-5. URL to page is 
+5. URL to page is:  
     https://storage.googleapis.com/my_uniqe_devops_static_name/index.html
