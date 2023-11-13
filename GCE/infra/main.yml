@@ -7,39 +7,14 @@
   become: yes
 
   tasks:
-    - name: Creating a file with content
-      copy:
-        dest: "/tmp/test"
-        content: "a to {{ lookup('env', 'varki') }}"
-
     - name: Update package list
       apt:
         update_cache: yes
-    - name: file ca-certificates
-      ansible.builtin.command: echo vars > /tmp/test.txt
-    
-    - name: fdsfadf
-      ansible.builtin.command: echo "dsfdsfdsf" > /home/ubuntu/tyyuu.txt
 
     - name: Upgrade packages
       apt:
         upgrade: yes
     
-    # - name: read valut
-    #   ansible.builtin.include_vars:
-    #       file: secret.yml
-    #   vars:
-    #     ansible-valut-password-file: "{{ lookup('env', 'ANSIBLE_VAULT_PASSWORD_FILE') }}"
-
-    # - name: Add admin account
-    #   ignore_errors: yes
-    #   user:
-    #     name: admin
-    #     password: "{{ admin_password | password_hash('sha512')}}" # encrypted password
-    #     shell: /bin/bash
-    #     groups: sudo
-    #     append: yes
-
     - name: Install required system packages
       apt:
         pkg:

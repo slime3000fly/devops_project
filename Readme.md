@@ -33,7 +33,7 @@ To install and configure this project, you need to meet the following prerequisi
 
 ### Installation and Configuration GCE
 #### To run this configuration you must have ansible, terraform installed
-#### You need an API key for GCE and access to Secret Manager
+#### You need an API key for GCE and ssh key
 1. Clone this project to your local machine:
    ```shell
    git clone

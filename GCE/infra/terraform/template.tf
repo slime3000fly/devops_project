@@ -1,40 +1,30 @@
-# resource "google_compute_instance_template" "my_template" {
-#     name        = "devops-template"
-#     machine_type = "e2-small"
-#     disk {
-#         # source_image = google_compute_image.my_image.self_link
-#         source_image = "ubuntu-os-cloud/ubuntu-2004-lts"
-#     }
-#     network_interface {
-#         network = "default"
-#     }
+resource "google_compute_instance_template" "my_template" {
+    name        = "devops-template"
+    machine_type = "e2-small"
+    disk {
+        source_image = google_compute_image.devs.self_link
+        # source_image = "ubuntu-os-cloud/ubuntu-2004-lts"
+    }
+    network_interface {
+        network = "default"
+    }
 
-#     metadata = {
-#         ssh-keys = "root:${file("~/.ssh/id_rsa.pub")}"
-#     }
+    metadata = {
+        ssh-keys = "root:${file("~/.ssh/id_rsa.pub")}"
+    }
 
-#     provisioner "remote-exec" {
-#         inline = ["echo 'Wait until SSH is ready'"]
 
-#         connection {
-#         type        = "ssh"
-#         user        = local.ssh_user
-#         private_key = file(local.private_key_path)
-#         host        = google_compute_instance.devops.network_interface.0.access_config.0.nat_ip
-#         }
-#     }
+    tags = ["http-server","https-server"]
+}
 
-#     provisioner "local-exec" {
-#         command = "ansible-playbook  -i ${google_compute_instance.devops.network_interface.0.access_config.0.nat_ip}, --private-key ${local.private_key_path} --ask-vault-pass ../main.yml"
-#     }
+# Target pool
+resource "google_compute_target_pool" "devops_target_pool" {
+  name = "devops-pool"
+  region = var.gcp_region
+  instances = [google_compute_instance.devops.self_link] 
+}
 
-#     tags = ["http-server","https-server"]
-# }
-
-# # Target pool
-# resource "google_compute_target_pool" "devops_target_pool" {
-#   name = "devops-pool"
-#   region = var.gcp_region
-#   instances = [google_compute_instance.devops.self_link] 
-# }
-
+resource "google_compute_image" "devs" {
+  name = "devik"
+  source_snapshot = google_compute_snapshot.devops_snapshot.self_link
+}
