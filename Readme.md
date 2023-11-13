@@ -27,9 +27,9 @@ To install and configure this project, you need to meet the following prerequisi
 1. A Google Cloud Platform (GCP) account with the appropriate permissions for creating and managing virtual machines.
 2. A GCP API key that allows the creation of virtual machines.
 
-### Installation and Configuration GCE
-#### To run this configuration you must have ansible, terraform installed
-#### You need an API key for GCE and ssh key
+## Installation and Configuration GCE
+### To run this configuration you must have ansible, terraform installed
+### You need an API key for GCE and ssh key
 1. Clone this project to your local machine:
    ```shell
    git clone
@@ -45,8 +45,8 @@ To install and configure this project, you need to meet the following prerequisi
     ```shell
     http://YOUR_MACHINE_IP
 
-### Installation and Configuration GKE
-#### To run this configuration you must have kubernetes, terraform installed
+## Installation and Configuration GKE
+### To run this configuration you must have kubernetes, terraform installed
 
 1. Clone this project to your local machine:
    ```shell
@@ -88,8 +88,8 @@ To install and configure this project, you need to meet the following prerequisi
 admin acconut password - admin  
 ansible valut password - password
 
-### Installation and Configuration Static page (bucket)
-#### To run this configuration you must have terrafrom installed
+## Installation and Configuration Static page (bucket)
+### To run this configuration you must have terrafrom installed
 1. Clone this project to your local machine:
    ```shell
    git clone
