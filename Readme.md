@@ -6,10 +6,11 @@
 2. [CI/CD](#cicd)
 3. [Prerequisites](#prerequisites)
 4. [Folder list](#folder-list)
-5. [Installation and Configuration GCP](#installation-and-configuration-gcp)
+5. [Installation and Configuration GCP](#installation-and-configuration-gce)
 6. [Installation and Configuration GKE](#installation-and-configuration-gke)
 7. [Installation and Configuration Vagrant](#installation-and-configuration-Vagrant)
-8. [Secrets](#secrets)
+8. [Installation and Configuration Static page (bucket)](#installation-and-configuration-static-page-bucket)
+9. [Secrets](#secrets)
 
 ## Project Description
 The goal of this project is to demonstrate the capability of configuring environments for hosting internet sites. Currently, there is a "VM" folder that contains instructions to automatically create a Virtual Machine (VM) on Google Cloud Platform (GCP), download an operating system image, and launch a website accessible from the internet. 
@@ -26,14 +27,9 @@ To install and configure this project, you need to meet the following prerequisi
 1. A Google Cloud Platform (GCP) account with the appropriate permissions for creating and managing virtual machines.
 2. A GCP API key that allows the creation of virtual machines.
 
-## Folder list
-1. [GCE](#installation-and-Configuration-GCE)
-2. [GKE](##installation-and-Configuration-GKE)
-3. [Vagrant](##installation-and-Configuration-Vagrant)
-
-### Installation and Configuration GCE
-#### To run this configuration you must have ansible, terraform installed
-#### You need an API key for GCE and ssh key
+## Installation and Configuration GCE
+### To run this configuration you must have ansible, terraform installed
+### You need an API key for GCE and ssh key
 1. Clone this project to your local machine:
    ```shell
    git clone
@@ -49,8 +45,8 @@ To install and configure this project, you need to meet the following prerequisi
     ```shell
     http://YOUR_MACHINE_IP
 
-### Installation and Configuration GKE
-#### To run this configuration you must have kubernetes, terraform installed
+## Installation and Configuration GKE
+### To run this configuration you must have kubernetes, terraform installed
 
 1. Clone this project to your local machine:
    ```shell
@@ -87,6 +83,21 @@ To install and configure this project, you need to meet the following prerequisi
 5. Connect to the page
    ```shell
     http://VirtualMachine_IP_address
+
+## Installation and Configuration Static page (bucket)
+### To run this configuration you must have terrafrom installed
+1. Clone this project to your local machine:
+   ```shell
+   git clone
+2. Copy GCP API key to main folder
+3. Navigate to folder with setup.
+     ```shell
+    cd Static
+4. Run bash script
+     ```shell
+    bash RUN.bash
+5. URL to page is:  
+    https://storage.googleapis.com/my_uniqe_devops_static_name/index.html
 
 ## Secrets
 admin acconut password - admin  
