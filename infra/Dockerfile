@@ -5,3 +5,4 @@ FROM httpd:latest
 COPY ../website /usr/local/apache2/htdocs/
 
 # Copy config file to container
+COPY httpd.conf /usr/local/apache2/conf

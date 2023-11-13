@@ -20,10 +20,18 @@ services:
     volumes:
       - /etc/prometheus.yml
 
+  apache_exporter:
+    image: prom/apache-exporter
+    ports:
+      - "9117:9117"
+    environment:
+      - STATUSURL=http://apache:80/server-status?auto
+    restart: always
+
   grafana:
     image: grafana/grafana
     ports:
       - "3000:3000"
     environment:
-      - GF_SECURITY_ADMIN_PASSWORD=yourpassword
+      - GF_SECURITY_ADMIN_PASSWORD=admin
     restart: always
