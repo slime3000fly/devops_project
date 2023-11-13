@@ -8,7 +8,7 @@
 4. [Folder list](#folder-list)
 5. [Installation and Configuration GCP](#installation-and-configuration-gcp)
 6. [Installation and Configuration GKE](#installation-and-configuration-gke)
-7. [Installation and Configuration GKE](#installation-and-configuration-gke)
+7. [Installation and Configuration Vagrant](#installation-and-configuration-Vagrant)
 8. [Secrets](#secrets)
 
 ## Project Description
