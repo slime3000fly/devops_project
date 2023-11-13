@@ -13,4 +13,4 @@ sed -i '' "s/gcp_project *= *\"[^\"]*\"/gcp_project = \"$trimmed_name\"/" terraf
 
 # Create a GCP instance with Terraform.
 terraform init
-terraform apply
+terraform apply -auto-approve

@@ -4,7 +4,6 @@ locals {
   private_key_path = "~/.ssh/id_rsa"
 }
 
-
 # Master server
 resource "google_compute_instance" "devops" {
   name         = "devopsik"
@@ -38,14 +37,8 @@ resource "google_compute_instance" "devops" {
   }
 
   provisioner "local-exec" {
-    command = "ansible-playbook  -i ${google_compute_instance.devops.network_interface.0.access_config.0.nat_ip}, --private-key ${local.private_key_path} --ask-vault-pass ../main.yml"
+    command = "ansible-playbook -i ${google_compute_instance.devops.network_interface.0.access_config.0.nat_ip}, --private-key ${local.private_key_path} --ask-vault-pass ../main.yml"
   }
 
   tags = ["http-server","https-server"]
 }
-
-# Get external ip address of master_node
-# resource "local_file" "external_ip" {
-#     content  = google_compute_instance.devops.network_interface.0.access_config.0.nat_ip
-#     filename = "../../ip.txt"
-# }
