@@ -1,37 +1,91 @@
-version: '3'
+# version: '3'
+# services:
+#   watchtower:
+#     image: containrrr/watchtower
+#     volumes:
+#       - /var/run/docker.sock:/var/run/docker.sock
+#     command: --interval 30
+#     restart: always
+
+#   apache:
+#     image: slime3000fly/apache_website:latest
+#     ports:
+#       - "80:80"
+#     restart: always
+
+#   prometheus:
+#     image: prom/prometheus
+#     ports: 
+#       - "9090:9090"
+#     volumes:
+#       - /etc/prometheus.yml
+
+
+
+#   grafana:
+#     image: grafana/grafana
+#     ports:
+#       - "3000:3000"
+#     environment:
+#       - GF_SECURITY_ADMIN_PASSWORD=admin
+#     restart: always
+
+volumes:
+  prometheus-data:
+    driver: local
+  grafana-data:
+    driver: local
 services:
-  watchtower:
-    image: containrrr/watchtower
+
+  prometheus:
+    image: prom/prometheus:v2.37.9
+    container_name: prometheus
+    ports:
+      - 9090:9090
+    command: "--config.file=/config/prometheus.yml"
     volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-    command: --interval 30
-    restart: always
+      - ./config:/config
+      - prometheus-data:/prometheus
+    restart: unless-stopped
+
+  grafana:
+    image: grafana/grafana-oss:latest
+    container_name: grafana
+    ports:
+      - "3000:3000"
+    volumes:
+      - grafana-data:/var/lib/grafana
+    restart: unless-stopped
+
+  node_exporter:
+    image: quay.io/prometheus/node-exporter:latest
+    container_name: node_exporter
+    command:
+      - '--path.rootfs=/host'
+    pid: host
+    restart: unless-stopped
+    volumes:
+      - '/:/host:ro,rslave'
 
   apache:
     image: slime3000fly/apache_website:latest
+    container_name: apache
+    volumes:
+      - ./config/httpd.conf:/usr/local/apache2/conf/httpd.conf
     ports:
       - "80:80"
     restart: always
 
-  prometheus:
-    image: prom/prometheus
-    ports: 
-      - "9090:9090"
-    volumes:
-      - /etc/prometheus.yml
-
   apache_exporter:
-    image: prom/apache-exporter
+    image: lusotycoon/apache-exporter
+    container_name: apache_exporter
+    privileged: true
     ports:
-      - "9117:9117"
-    environment:
-      - STATUSURL=http://apache:80/server-status?auto
-    restart: always
-
-  grafana:
-    image: grafana/grafana
-    ports:
-      - "3000:3000"
-    environment:
-      - GF_SECURITY_ADMIN_PASSWORD=admin
-    restart: always
+    - mode: ingress
+      target: 9117
+      published: "9117"
+      protocol: tcp
+    restart: unless-stopped
+    extra_hosts:
+    - "localhost:127.17.0.1"
+    entrypoint: /bin/apache_exporter  --scrape_uri="http://172.17.0.1/server-status?auto"

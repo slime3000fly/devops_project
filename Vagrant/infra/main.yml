@@ -81,10 +81,14 @@
         name: docker
         state: started
 
-    - name: Skopiuj plik docker-compose.yml na hosta
+    - name: copy docker-compose.yml to host
       copy:
-        src: docker-compose.yml
+        src: "{{ item }}"
         dest: /
+      with_items:
+        - docker-compose.yml
+        - config
+
 
     - name: deploy Docker Compose stack
       community.docker.docker_compose:
