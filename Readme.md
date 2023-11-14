@@ -68,7 +68,7 @@ To install and configure this project, you need to meet the following prerequisi
     ```shell
     http://IP_address
 
-### Installation and Configuration GKE
+### Installation and Configuration Vagrant
 #### To run this configuration you must have ansible, vagrant installed
 
 1. Clone this project to your local machine:
@@ -82,7 +82,11 @@ To install and configure this project, you need to meet the following prerequisi
     vagrant up
 5. Connect to the page
    ```shell
-    http://VirtualMachine_IP_address
+    http://VirtualMachine_IP_address:8080
+
+If you want to see metric go to:
+   ```shell
+    http://VirtualMachine_IP_address:3000
 
 ## Installation and Configuration Static page (bucket)
 ### To run this configuration you must have terrafrom installed
