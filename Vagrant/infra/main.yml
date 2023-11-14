@@ -1,28 +1,24 @@
----
-
-- name: Server Installation and Configuration
+- name: Deploy with Docker Compose
   hosts: all
-  gather_facts: no
   become: yes
-
   tasks:
     - name: Update package list
       apt:
         update_cache: yes
-    
+
     - name: Upgrade packages
       apt:
         upgrade: yes
-    
-    - name: read valut
+
+    - name: Read vault
       ansible.builtin.include_vars:
-          file: secret.yml
+        file: secret.yml
 
     - name: Add admin account
       ignore_errors: yes
       user:
         name: admin
-        password: "{{ admin_password | password_hash('sha512')}}" # encrypted password
+        password: "{{ admin_password | password_hash('sha512')}}"
         shell: /bin/bash
         groups: sudo
         append: yes
@@ -40,21 +36,37 @@
         state: latest
         update_cache: true
 
-    - name: add GPG key
+    - name: Add GPG key
       apt_key:
         url: https://download.docker.com/linux/ubuntu/gpg
         state: present
 
-    - name: add docker repository to apt
+    - name: Add Docker repository to apt
       apt_repository:
         repo: deb https://download.docker.com/linux/ubuntu bionic stable
         state: present
+
+    - name: pip upgrade
+      pip:
+        name: pip
+        state: latest
 
     - name: Install Docker Module for Python
       pip:
         name: docker
 
-    - name: install docker
+    - name: Install Docker-compose Module for Python
+      pip:
+        name: docker-compose
+
+    - name: Install docker-compose
+      remote_user: ubuntu
+      get_url: 
+        url : https://github.com/docker/compose/releases/download/1.25.1-rc1/docker-compose-Linux-x86_64
+        dest: /usr/local/bin/docker-compose
+        mode: 'u+x,g+x'
+
+    - name: Install Docker
       apt:
         name: "{{item}}"
         state: latest
@@ -63,41 +75,22 @@
         - docker-ce
         - docker-ce-cli
         - containerd.io
-        
+
     - name: Start Docker service
       systemd:
         name: docker
         state: started
 
-- name: Deploy docker image
-  hosts: all
-  become: true
-  tasks:
-   - name: pull image
-     docker_image:
-      name: slime3000fly/apache_website
-      source: pull
+    - name: copy docker-compose.yml to host
+      copy:
+        src: "{{ item }}"
+        dest: /
+      with_items:
+        - docker-compose.yml
+        - config
 
-   - name: Pull the Watchtower Docker image
-     docker_image:
-        name: containrrr/watchtower:latest
-        source: pull
-
-   - name: run image
-     docker_container:
-      name: webiste
-      image: slime3000fly/apache_website:latest
-      ports: 
-        - "80:80"
-
-   - name: Deploy Watchtower container
-     docker_container:
-       name: watchtower
-       image: containrrr/watchtower:latest
-       volumes:
-         - /var/run/docker.sock:/var/run/docker.sock 
-       detach: yes  
-       restart_policy: always 
-       env:
-        WATCHTOWER_POLL_INTERVAL: 1m
-
+    - name: deploy Docker Compose stack
+      community.docker.docker_compose:
+        project_src: /
+        files:
+        - docker-compose.yml
