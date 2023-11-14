@@ -88,6 +88,10 @@ To install and configure this project, you need to meet the following prerequisi
    ```shell
     http://VirtualMachine_IP_address:8080
 
+If you want to see metric go to:
+   ```shell
+    http://VirtualMachine_IP_address:3000
+
 ## Secrets
 admin acconut password - admin  
 ansible valut password - password
