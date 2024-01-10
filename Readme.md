@@ -84,10 +84,11 @@ To install and configure this project, you need to meet the following prerequisi
    ```shell
     http://VirtualMachine_IP_address:8080
 
+
 If you want to see metric go to:
    ```shell
     http://VirtualMachine_IP_address:3000
-
+   ```
 ## Installation and Configuration Static page (bucket)
 ### To run this configuration you must have terrafrom installed
 1. Clone this project to your local machine:
