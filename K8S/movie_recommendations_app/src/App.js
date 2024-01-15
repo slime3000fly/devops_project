@@ -5,34 +5,33 @@ function MovieRecommendations() {
     const [userId, setUserId] = useState('');
     const [numRecommendations, setNumRecommendations] = useState(5);
     const [recommendations, setRecommendations] = useState([]);
-    
+
     const getRecommendations = () => {
-      // Ensure numRecommendations is parsed as an integer
-      const requestData = {
-          userId: userId,
-          numRecommendations: parseInt(numRecommendations, 10),
-      };
-  
-      // Make a POST request to the Flask backend
-      fetch('http://localhost:5000/predict', {
-          method: 'POST',
-          headers: {
-              'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(requestData),
-      })
-      .then(response => response.json())
-      .then(data => {
-          if (data.recommendations) {
-              setRecommendations(data.recommendations);
-          } else {
-              console.error('No recommendations found in the response:', data);
-          }
-      })
-      .catch(error => {
-          console.error('Error:', error);
-      });
-  };
+        const requestData = {
+            userId: userId,
+            numRecommendations: parseInt(numRecommendations, 10),
+        };
+
+        fetch('http://localhost:5000/predict', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(requestData),
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.recommendations) {
+                // Assuming data.recommendations is an array of recommendations
+                setRecommendations(data.recommendations);
+            } else {
+                console.error('No recommendations found in the response:', data);
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    };
 
     return (
         <Container maxWidth="sm">
@@ -71,11 +70,13 @@ function MovieRecommendations() {
                 Recommendations:
             </Typography>
             <List>
-                {recommendations.map((movie, index) => (
-                    <ListItem key={index}>
-                        <Typography>{movie}</Typography>
-                    </ListItem>
-                ))}
+                {Object.keys(recommendations).map((key, index) => (
+                <ListItem key={index}>
+                    <Typography>
+                        {key}: {recommendations[key]}
+                    </Typography>
+                </ListItem>
+            ))}
             </List>
         </Container>
     );
