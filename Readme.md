@@ -27,9 +27,16 @@ To install and configure this project, you need to meet the following prerequisi
 1. A Google Cloud Platform (GCP) account with the appropriate permissions for creating and managing virtual machines.
 2. A GCP API key that allows the creation of virtual machines.
 
-## Installation and Configuration GCE
-### To run this configuration you must have ansible, terraform installed
-### You need an API key for GCE and ssh key
+## Folder list
+1. [GCE](#installation-and-Configuration-GCE)
+2. [GKE](##installation-and-Configuration-GKE)
+3. [Vagrant](##installation-and-Configuration-Vagrant)
+4. [K8S](K8S/README.md)
+
+### Installation and Configuration GCE
+#### To run this configuration you must have ansible, terraform installed
+#### You need an API key for GCE and ssh key
+
 1. Clone this project to your local machine:
    ```shell
    git clone
