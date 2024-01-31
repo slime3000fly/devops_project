@@ -30,6 +30,7 @@ To install and configure this project, you need to meet the following prerequisi
 1. [GCE](#installation-and-Configuration-GCE)
 2. [GKE](##installation-and-Configuration-GKE)
 3. [Vagrant](##installation-and-Configuration-Vagrant)
+4. [K8S](K8S/README.md)
 
 ### Installation and Configuration GCE
 #### To run this configuration you must have ansible, terraform installed
