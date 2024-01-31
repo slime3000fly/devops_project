@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Container, TextField, Button, Typography, List, ListItem } from '@mui/material';
+import { Container, TextField, Button, Typography, List, ListItem, Card, CardContent } from '@mui/material';
 
 function MovieRecommendations() {
     const [userId, setUserId] = useState('');
@@ -12,7 +12,7 @@ function MovieRecommendations() {
             numRecommendations: parseInt(numRecommendations, 10),
         };
 
-        fetch('http://localhost:5000/predict', {
+        fetch('http://127.0.0.1:59542/predict', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -22,7 +22,6 @@ function MovieRecommendations() {
         .then(response => response.json())
         .then(data => {
             if (data.recommendations) {
-                // Assuming data.recommendations is an array of recommendations
                 setRecommendations(data.recommendations);
             } else {
                 console.error('No recommendations found in the response:', data);
@@ -70,13 +69,22 @@ function MovieRecommendations() {
                 Recommendations:
             </Typography>
             <List>
-                {Object.keys(recommendations).map((key, index) => (
-                <ListItem key={index}>
-                    <Typography>
-                        {key}: {recommendations[key]}
-                    </Typography>
-                </ListItem>
-            ))}
+                {recommendations.map((recommendation, index) => (
+                    <ListItem key={index}>
+                        <Card>
+                            <CardContent>
+                                <Typography>
+                                    Title: {recommendation.title}, Accurate: {recommendation.recommendationScore}
+                                </Typography>
+                                <img
+                                    alt={`Movie ${index + 1}`}
+                                    src={recommendation.photoData ? `data:image/jpeg;base64,${recommendation.photoData}` : 'https://www.itatools.com.pl/img/no-photo-available.png'}
+                                    style={{ maxWidth: '100%', marginTop: '10px' }}
+                                />
+                            </CardContent>
+                        </Card>
+                    </ListItem>
+                ))}
             </List>
         </Container>
     );
