@@ -7,16 +7,17 @@ The app consists of three main components: backend, frontend and MongoDB databas
 
 ## Components:
 
-   ### Backend:
-        A microservice that handles the logic involved in recommending movies 
-        Uses Kubernetes for container management, scaling and resource access management. 
+  ### Backend:
+  A microservice that handles the logic involved in recommending movies 
+  Uses Kubernetes for container management, scaling and resource access management. 
 
-   ### Frontend:
-        User interface that allows users to browse and receive movie recommendations.
-        Built on REACT technologies.
+  ### Frontend:
+  User interface that allows users to browse and receive movie recommendations.
+  Built on REACT technologies.
 
-   ### MongoDB Database:
-        A database that stores information about movies.
+  ### MongoDB Database:
+  A database that stores information about movies.
+  Utilizes StatefulSet and persistent volume for increased reliability.
 
 ## Architecture:
 The project uses microservices to easily scale and expand individual components.<br />
