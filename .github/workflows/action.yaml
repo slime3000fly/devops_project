@@ -22,5 +22,5 @@ jobs:
       - name: Build and Push Docker Image
         run: |
           cd GoogleCloud
-          docker build -t ${{ secrets.DOCKER_USERNAME }}/$IMAGE_NAME -f GoogleCloud/infra/Dockerfile .
+          docker build -t ${{ secrets.DOCKER_USERNAME }}/$IMAGE_NAME -f infra/Dockerfile .
           docker push ${{ secrets.DOCKER_USERNAME }}/$IMAGE_NAME:latest
