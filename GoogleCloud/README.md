@@ -29,6 +29,7 @@ To install and configure project in GoogleCloud file, you need to meet the follo
 2. [GKE](##installation-and-Configuration-GKE)
 3. [Static](##Installation-and-Configuration-Static-page-(bucket))
 
+## Folders
 ### Installation and Configuration GCE
 #### To run this configuration you must have ansible, terraform installed
 #### You need an API key for GCE and ssh key in ~/.ssh/

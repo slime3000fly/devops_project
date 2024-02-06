@@ -18,6 +18,7 @@ CI/CD pipelines have been set up using GitHub Actions. Any change in the reposit
 3. [Vagrant](##installation-and-Configuration-Vagrant)
 4. [K8S](K8S/README.md)
 
+## Folders
 ### Installation and Configuration Vagrant
 #### To run this configuration you must have ansible, vagrant installed
 
