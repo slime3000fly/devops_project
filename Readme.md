@@ -22,10 +22,10 @@ The goal of this project is to demonstrate the capability of configuring environ
 CI/CD pipelines have been set up using GitHub Actions. Any change in the repository triggers the pipeline to start, resulting in the creation of a new Docker image that is then published to Docker Hub
 
 ## Prerequisites
-To install and configure this project, you need to meet the following prerequisites:
+To install and configure project in GoogleCloud file, you need to meet the following prerequisites:
 
 1. A Google Cloud Platform (GCP) account with the appropriate permissions for creating and managing virtual machines.
-2. A GCP API key that allows the creation of virtual machines.
+2. A GCP API key in GoogleCloud file that allows the creation of virtual machines.
 
 ## Folder list
 1. [GCE](#installation-and-Configuration-GCE)
@@ -35,7 +35,7 @@ To install and configure this project, you need to meet the following prerequisi
 
 ### Installation and Configuration GCE
 #### To run this configuration you must have ansible, terraform installed
-#### You need an API key for GCE and ssh key
+#### You need an API key for GCE and ssh key in ~/.ssh/
 
 1. Clone this project to your local machine:
    ```shell
@@ -43,7 +43,7 @@ To install and configure this project, you need to meet the following prerequisi
 2. Copy GCP API key to main folder
 3. Navigate to folder with setup.
      ```shell
-    cd GCE/infra
+    cd GoogleCloud/GCE/infra
 4. Run bash script
      ```shell
     bash RUN.bash
@@ -61,7 +61,7 @@ To install and configure this project, you need to meet the following prerequisi
 2. Copy GCP API key to main folder
 3. Navigate to folder with setup.
      ```shell
-    cd GKE/infra
+    cd GoogleCloud/GKE/infra
 4. Run bash script
      ```shell
     bash RUN.bash
