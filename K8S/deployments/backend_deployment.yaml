@@ -20,5 +20,16 @@ spec:
       containers:
       - name: backend
         image: ghcr.io/slime3000fly/backend
+        env:
+          - name: MONGO_USERNAME
+            valueFrom:
+              secretKeyRef:
+                name: mongo-credentials
+                key: username
+          - name: MONGO_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: mongo-credentials
+                key: password
         ports:
         - containerPort: 5000

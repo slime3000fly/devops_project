@@ -3,6 +3,7 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 from pymongo import MongoClient
 import base64
+import os
 
 # Load the trained Turi Create model
 model = tc.load_model("recomendation_engine/recomendation_model")
@@ -10,10 +11,19 @@ model = tc.load_model("recomendation_engine/recomendation_model")
 app = Flask("movie_recomendation")
 CORS(app)
 
+user = os.environ.get("MONGO_USERNAME")
+pas = os.environ.get("MONGO_PASSWORD")
+
 # Connect to MongoDB
-client = MongoClient("mongodb://mongodb-service:27017", username="admin", password="admin")
-db = client["movie"]  # Zmień "myDatabase" na nazwę rzeczywistej bazy danych
-photos_collection = db["image"]  # Zmień "myPhotos" na nazwę rzeczywistej kolekcji
+client = MongoClient("mongodb://mongodb-service:27017", username=user, password=pas)
+db = client["movie"] 
+photos_collection = db["image"]  
+
+# check connection with database
+if client is not None and client.server_info() is not None:
+    app.logger.info("Successfully connected to the MongoDB database.")
+else:
+    app.logger.error("Failed to connect to the MongoDB database.")
 
 
 @app.route("/predict", methods=["POST"])

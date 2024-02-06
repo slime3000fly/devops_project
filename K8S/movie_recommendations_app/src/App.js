@@ -12,7 +12,7 @@ function MovieRecommendations() {
             numRecommendations: parseInt(numRecommendations, 10),
         };
 
-        fetch('http://127.0.0.1:59542/predict', {
+        fetch('/predict', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
