@@ -89,3 +89,8 @@ To install and configure project in GoogleCloud file, you need to meet the follo
 ## Secrets
 admin acconut password - admin  
 ansible valut password - password
+
+## Knowledge Base:
+To reference a file from the parent directory in a Dockerfile, use the following approach:  
+```docker build -t <some tag> -f <dir/dir/Dockerfile> .```  
+in this case, the context of the docker will be switched to the parent directory and accessible for ADD and COPY

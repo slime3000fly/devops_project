@@ -1,6 +1,13 @@
 # Movie Recommendations App
 
-## Description:
+## Table of Contents
+
+1. [Project Description](#project-description)
+2. [Components](#components)
+3. [Architecture](#architecture)
+4. [Knowledge Base](#knowledge-base)
+
+## Project Description:
 The Movie Recommendations App project is a comprehensive microservices-based solution,<br /> 
 configured in a Kubernetes cluster, that allows users to receive personalized movie recommendations. <br />
 The app consists of three main components: backend, frontend and MongoDB database.
