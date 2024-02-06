@@ -1,5 +1,4 @@
 ---
-
 - name: Server Installation and Configuration
   hosts: all
   gather_facts: no
