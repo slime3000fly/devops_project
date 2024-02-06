@@ -22,3 +22,10 @@ The app consists of three main components: backend, frontend and MongoDB databas
 ## Architecture:
 The project uses microservices to easily scale and expand individual components.<br />
 Communication between microservices is via HTTP protocols. The entire project is managed by a Kubernetes. container orchestrator.
+
+## Knowledge Base:
+- Deployment: Used for applications that aren't dependent on previous operations and<br />can have replaceable instances (e.g., backend, frontend).
+- StatefulSet: Applied to applications that need to remember their previous state and<br />require unique, persistent identities (e.g., databases).
+- RBAC and Secrets: RBAC (Role-Based Access Control) is employed for managing permissions within a Kubernetes cluster,<br /> including controlling access to secrets. Secrets contain sensitive information and are used to securely store confidential data,<br /> such as API keys or database credentials, for applications.
+- Nginx allowing frontend to communicate with container in cluster
+- Ngnix hack for static sites: ```error_page  405     =200 $uri;```
