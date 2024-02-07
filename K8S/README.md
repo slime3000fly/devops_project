@@ -1,19 +1,21 @@
 # Movie Recommendations App
 
 ## Table of Contents
-
 1. [Project Description](#project-description)
-2. [Components](#components)
-3. [Architecture](#architecture)
-4. [Knowledge Base](#knowledge-base)
+2. [Deployment](#Deployment)
+3. [Components](#components)
+4. [Architecture](#architecture)
+5. [Knowledge Base](#knowledge-base)
 
 ## Project Description:
 The Movie Recommendations App project is a comprehensive microservices-based solution,<br /> 
 configured in a Kubernetes cluster, that allows users to receive personalized movie recommendations. <br />
 The app consists of three main components: backend, frontend and MongoDB database.
 
-## Components:
+## Deployment
+You can deploy this project using kubernetes cluster and dployments or helm chart from file ```helm```
 
+## Components:
   ### Backend:
   A microservice that handles the logic involved in recommending movies 
   Uses Kubernetes for container management, scaling and resource access management. 

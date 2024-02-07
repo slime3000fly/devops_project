@@ -1,0 +1,5 @@
+apiVersion: v2
+name: movie-recomendations-app
+version: 1.0.0
+home: https://github.com/slime3000fly/devops_project
+description: Sample micoservices application
