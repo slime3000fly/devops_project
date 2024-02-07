@@ -1,0 +1,31 @@
+services:
+  backend:
+    image: ghcr.io/slime3000fly/backend:latest
+    container_name: backend-service
+    ports:
+      - 5000:5000
+    networks:
+      - front-tier
+      - back-tier
+  frontend:
+    image: ghcr.io/slime3000fly/move_recomendations_app:latest
+    ports:
+      - 8080:80
+    networks:
+      - front-tier
+  mongodb:
+    image: ghcr.io/slime3000fly/mongodb:latest
+    container_name: mongodb-service
+    volumes:
+      - db-data:/etc/data
+    ports:
+      - 27017:27017
+    networks:
+      - back-tier
+
+networks:
+  front-tier: {}
+  back-tier: {}
+
+volumes:
+  db-data: {}

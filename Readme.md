@@ -17,6 +17,7 @@ CI/CD pipelines have been set up using GitHub Actions. Any change in the reposit
 1. [GoogleCloud](GoogleCloud/README.md)
 3. [Vagrant](##installation-and-Configuration-Vagrant)
 4. [K8S](K8S/README.md)
+5. [DockerCompose](DockerCompose/README.md)
 
 ## Folders
 ### Installation and Configuration Vagrant
