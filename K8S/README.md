@@ -13,7 +13,7 @@ configured in a Kubernetes cluster, that allows users to receive personalized mo
 The app consists of three main components: backend, frontend and MongoDB database.
 
 ## Deployment
-You can deploy this project using kubernetes cluster and dployments or helm chart from file ```helm```
+You can deploy this project using kubernetes cluster and dployments or helm chart from file ```helm install --name robot-shop --namespace robot-shop .```
 
 ## Components:
   ### Backend:

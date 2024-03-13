@@ -1,4 +1,6 @@
 apiVersion: v2
+image:
+  pullPolicy: Always
 name: movie-recomendations-app
 version: 1.0.0
 home: https://github.com/slime3000fly/devops_project

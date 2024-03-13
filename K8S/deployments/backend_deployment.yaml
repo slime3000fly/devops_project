@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
       - name: backend
-        image: ghcr.io/slime3000fly/backend
+        image: ghcr.io/slime3000fly/backend:prometheus
         env:
           - name: MONGO_USERNAME
             valueFrom:

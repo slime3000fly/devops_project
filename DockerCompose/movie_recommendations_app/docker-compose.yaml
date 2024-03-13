@@ -1,6 +1,6 @@
 services:
   backend:
-    image: ghcr.io/slime3000fly/backend:latest
+    image: ghcr.io/slime3000fly/backend:prometheus
     container_name: backend-service
     ports:
       - 5000:5000

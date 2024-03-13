@@ -2,8 +2,10 @@ import turicreate as tc
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 from pymongo import MongoClient
+from prometheus_client import Counter, start_http_server, generate_latest, CONTENT_TYPE_LATEST
 import base64
 import os
+
 
 # Load the trained Turi Create model
 model = tc.load_model("recomendation_engine/recomendation_model")
@@ -25,11 +27,19 @@ if client is not None and client.server_info() is not None:
 else:
     app.logger.error("Failed to connect to the MongoDB database.")
 
+# expose metric
+requests_counter = Counter('movie_recommendation_requests', 'Number of requests for movie recommendations')
+
+@app.route("/metrics")
+def metrics():
+    return generate_latest(), 200, {'Content-Type': CONTENT_TYPE_LATEST}
 
 @app.route("/predict", methods=["POST"])
 def predict():
     try:
-        reco = {}
+        # collect metrics
+        requests_counter.inc()
+
         data = request.json
         user_id = data.get("userId", "test_user")
         num_recommendations = data.get("numRecommendations", 5)
