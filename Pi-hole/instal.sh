@@ -47,17 +47,11 @@ echo \
   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 sudo apt-get update
 
+# Install docker
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+
 # Start docker
 sudo systemctl start docker
-
-# Downloading latest version of Docker Compose
-sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-
-# Granting execute permissions to Docker Compose file
-sudo chmod +x /usr/local/bin/docker-compose
-
-# Checking installed Docker Compose version
-docker-compose --version
 
 # Run Pi-hole in docker
 docker-compose up -d
