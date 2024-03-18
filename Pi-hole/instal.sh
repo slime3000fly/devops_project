@@ -28,9 +28,11 @@ EOF
 sudo ln -s /etc/nginx/sites-available/reverse-proxy /etc/nginx/sites-enabled/reverse-proxy
 
 # Restarting Nginx server
+echo "restart nginx"
 sudo systemctl restart nginx
 
 # install docker 
+echo "Docker instalation"
 # Downloading and adding Docker GPG key
 curl -fsSL https://download.docker.com/linux/raspbian/gpg | sudo apt-key add -
 
@@ -74,4 +76,5 @@ while true; do
 done
 
 docker cp config pihole:/tmp
+docker cp pi-hole_restore.tar.gz pihole:/tmp
 docker exec -it pihole sh -c "./tmp/config.sh"
