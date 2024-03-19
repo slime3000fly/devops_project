@@ -59,7 +59,7 @@ docker-compose up -d
 
 echo "waiting for container"
 while true; do
-    if [ $( docker ps -a | grep testContainer | wc -l ) -gt 0 ]; then
+    if [ $( docker ps -a | grep pihole | wc -l ) -gt 0 ]; then
         echo "Container run!!!"
         break
     else
