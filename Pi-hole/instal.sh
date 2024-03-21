@@ -68,6 +68,6 @@ while true; do
     fi
 done
 
-docker cp config pihole:/tmp
+docker cp config.sh pihole:/tmp
 docker cp pi-hole_restore.tar.gz pihole:/tmp
 docker exec -it pihole sh -c "./tmp/config.sh"

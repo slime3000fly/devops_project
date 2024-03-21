@@ -16,13 +16,13 @@ pihole_restore -f /tmp/pi-hole_restore.tar.gz -c
 
 cd /tmp && wget -q https://github.com/koljah-de/pi-hole-adlists-updater/archive/master.zip -O pi-hole-adlists-updater-master.zip && unzip -q pi-hole-adlists-updater-master.zip && cd pi-hole-adlists-updater-master && sudo ./install.sh && cd .. && rm -r pi-hole-adlists-updater-master*
 
-plik="/ścieżka/do/twojego/pliku"
+# file="/path/to/file"
 
-# Sprawdź, czy plik istnieje
-if [ -f "$plik" ]; then
-    # Znajdź linie z '# pihole -g' i odkomentuj je
-    sed -i '/# pihole -g/s/^#//' "$plik"
-    echo "Linie z '# pihole -g' zostały odkomentowane."
-else
-    echo "Plik '$plik' nie istnieje."
-fi
+# # Check if file exist
+# if [ -f "$file" ]; then
+#     # Find line with '# pihole -g' and uncomment it
+#     sed -i '/# pihole -g/s/^#//' "$plik"
+#     echo "Linie z '# pihole -g' done"
+# else
+#     echo "File '$file' doesn't exist"
+# fi
