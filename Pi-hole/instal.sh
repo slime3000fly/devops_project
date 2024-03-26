@@ -71,3 +71,13 @@ done
 docker cp config.sh pihole:/tmp
 docker cp pi-hole_restore.tar.gz pihole:/tmp
 docker exec -it pihole sh -c "./tmp/config.sh"
+
+#stop docker service to change cofnfiguration of pi-hole container
+id=docker inspect --format="{{.Id}}" pihole
+docker stop pihole
+systemctl stop docker
+
+# change port host 8080 to 80
+sed -i 's/"8080"/"80"/g' /var/lib/docker/containers/$id/hostconfig.json
+
+systemctl start
