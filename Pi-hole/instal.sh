@@ -1,6 +1,9 @@
 #!/bin/bash
 
+set -e
+
 # Installing Nginx
+echo -e "\e[34m Instal ngnix\e[0m"
 sudo apt-get update
 sudo apt-get upgrade -y
 sudo apt-get install -y nginx
@@ -9,18 +12,17 @@ sudo apt-get install -y nginx
 sudo cat <<EOF > /etc/nginx/sites-available/reverse-proxy
 server {
     listen 80;
-    listen 53 udp;
-    listen 53;
-    67;
+    # listen 53 udp;
+    # listen 53;
 
     resolver 127.0.0.1 valid=30s;
 
     location / {
         proxy_pass http://localhost:5353;  # Port on which Pi-hole operates inside Docker container
-        proxy_set_header Host $host;
-        proxy_set_header X-Real-IP $remote_addr;
-        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_set_header Host \$host;
+        proxy_set_header X-Real-IP \$remote_addr;
+        proxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto \$scheme;
     }
 }
 EOF
@@ -33,11 +35,11 @@ else
 fi
 
 # Restarting Nginx server
-echo "restart nginx"
+echo -e "\e[34m restart nginx\e[0m"
 sudo systemctl restart nginx
 
 # install docker 
-echo "Docker instalation"
+echo -e "\e[34m Docker instalation\e[0m"
 # Add Docker's official GPG key:
 sudo apt-get update
 sudo apt-get install -y ca-certificates curl
@@ -57,6 +59,10 @@ sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plug
 
 # Start docker
 sudo systemctl start docker
+
+# Install docker-compose
+echo -e "\e[34m Install docker-compose\e[0m"
+sudo apt install docker-compose -y
 
 # Run Pi-hole in docker
 docker-compose up -d
