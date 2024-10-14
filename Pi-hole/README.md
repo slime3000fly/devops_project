@@ -5,3 +5,7 @@
     https://github.com/koljah-de/pi-hole-adlists-updater
 ## Pi-hole restore CLI
     https://github.com/chamilad/pihole-restore
+
+
+## Update Rasbbery-pi kernetl
+https://github.com/raspberrypi/linux/issues/6170
