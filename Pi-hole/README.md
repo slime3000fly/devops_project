@@ -7,9 +7,9 @@ Installation
    ```bash
    bash install.sh
 This script will:
-    - Install Docker.
-    - Set up the Pi-hole container.
-    - Insert a specified URL into the adlist database.
+    - Install Docker.  
+    - Set up the Pi-hole container.  
+    - Insert a specified URL into the adlist database.  
 
 
 # Helpfull link and advice how to configure pi-hole
