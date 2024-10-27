@@ -1,42 +1,42 @@
 #!/bin/bash
 
-set -e
-
-# Installing Nginx
-echo -e "\e[34m Instal ngnix\e[0m"
-sudo apt-get update
-sudo apt-get upgrade -y
-sudo apt-get install -y nginx
-
-# Configuring reverse proxy
-sudo cat <<EOF > /etc/nginx/sites-available/reverse-proxy
-server {
-    listen 80;
-    # listen 53 udp;
-    # listen 53;
-
-    resolver 127.0.0.1 valid=30s;
-
-    location / {
-        proxy_pass http://localhost:5353;  # Port on which Pi-hole operates inside Docker container
-        proxy_set_header Host \$host;
-        proxy_set_header X-Real-IP \$remote_addr;
-        proxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;
-        proxy_set_header X-Forwarded-Proto \$scheme;
-    }
-}
-EOF
-
-# Enabling reverse proxy configuration
-if [ ! -L /etc/nginx/sites-enabled/reverse-proxy ]; then
-    sudo ln -s /etc/nginx/sites-available/reverse-proxy /etc/nginx/sites-enabled/reverse-proxy
-else
-    echo "Symbolic link for reverse-proxy already exists."
-fi
-
+# set -e
+# 
+# # Installing Nginx
+# echo -e "\e[34m Instal ngnix\e[0m"
+# sudo apt-get update
+# sudo apt-get upgrade -y
+# sudo apt-get install -y nginx
+# 
+# # Configuring reverse proxy
+# sudo cat <<EOF > /etc/nginx/sites-available/reverse-proxy
+# server {
+#     listen 80;
+#     # listen 53 udp;
+#     # listen 53;
+# 
+#     resolver 127.0.0.1 valid=30s;
+# 
+#     location / {
+#         proxy_pass http://localhost:5353;  # Port on which Pi-hole operates inside Docker container
+#         proxy_set_header Host \$host;
+#         proxy_set_header X-Real-IP \$remote_addr;
+#         proxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;
+#         proxy_set_header X-Forwarded-Proto \$scheme;
+#     }
+# }
+# EOF
+# 
+# # Enabling reverse proxy configuration
+# if [ ! -L /etc/nginx/sites-enabled/reverse-proxy ]; then
+#     sudo ln -s /etc/nginx/sites-available/reverse-proxy /etc/nginx/sites-enabled/reverse-proxy
+# else
+#     echo "Symbolic link for reverse-proxy already exists."
+# fi
+# 
 # Restarting Nginx server
-echo -e "\e[34m restart nginx\e[0m"
-sudo systemctl restart nginx
+#echo -e "\e[34m restart nginx\e[0m"
+#sudo systemctl restart nginx
 
 # install docker 
 echo -e "\e[34m Docker instalation\e[0m"
@@ -67,7 +67,7 @@ sudo apt install docker-compose -y
 # Run Pi-hole in docker
 docker-compose up -d
 
-echo "waiting for container"
+echo -e "\e[343m waiting for container\e[0m"
 while true; do
     if [ $( docker ps -a | grep pihole | wc -l ) -gt 0 ]; then
         echo "Container run!!!"
@@ -78,16 +78,16 @@ while true; do
     fi
 done
 
-docker cp config.sh pihole:/tmp
-docker cp pi-hole_restore.tar.gz pihole:/tmp
-docker exec -it pihole sh -c "./tmp/config.sh"
+echo -e "\e[34m importing addlist\e[0m"
+docker exec -it pihole sqlite3 /etc/pihole/gravity.db "INSERT INTO adlist (address) VALUES ('https://gitlab.com/hagezi/mirror/-/raw/main/dns-blocklists/adblock/pro.txt');"
+docker exec -it pihole pihole -g
 
-#stop docker service to change cofnfiguration of pi-hole container
-id=docker inspect --format="{{.Id}}" pihole
-docker stop pihole
-systemctl stop docker
+# Check for errors and retry if necessary
+if [ $? -ne 0 ]; then
+    echo "Error occurred while building gravity tree. Retrying in 10 seconds..."
+    sleep 10
+    docker exec -it pihole pihole -g
+fi
 
-# change port host 8080 to 80
-sed -i 's/"8080"/"80"/g' /var/lib/docker/containers/$id/hostconfig.json
-
-systemctl start
+# Print DONE message
+echo -e "\033[0;32mDONE\033[0m"
