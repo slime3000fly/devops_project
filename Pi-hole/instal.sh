@@ -1,7 +1,9 @@
 #!/bin/bash
 
-# set -e
-# 
+set -e
+
+read -p "Would you like to install Tailscale for VPN? (yes/no): " install_tailscale
+
 # # Installing Nginx
 # echo -e "\e[34m Instal ngnix\e[0m"
 # sudo apt-get update
@@ -88,6 +90,14 @@ if [ $? -ne 0 ]; then
     sleep 10
     docker exec -it pihole pihole -g
 fi
+
+if [[ "$install_tailscale" == "yes" ]]; then
+    echo -e "\e[34m Installing Tailscale\e[0m"
+    curl -fsSL https://tailscale.com/install.sh | sh
+    sudo tailscale up --ssh=true
+    echo -e "\033[0;32mTailscale installed and configured\033[0m"
+fi
+
 
 # Print DONE message
 echo -e "\033[0;32mDONE\033[0m"
