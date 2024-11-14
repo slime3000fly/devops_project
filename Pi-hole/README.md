@@ -1,4 +1,7 @@
-# This is repo wich script to automate Pi-hole instalation
+# This is repo wich script to automate home-lab server instalation
+##What will be instaled
+- Pi-hole
+- taiscalevp
 ##Requirements
 To set up Pi-hole using this script, you should have a Debian-based operating system.
 Installation
@@ -21,6 +24,5 @@ This script will:
 https://github.com/raspberrypi/linux/issues/6170
 
 # TODO:
-- add vpn cofiguration
 - add homepage for entire setup
 - add nas server

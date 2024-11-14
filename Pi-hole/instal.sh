@@ -1,7 +1,35 @@
 #!/bin/bash
 
-# set -e
-# 
+set -e
+
+read -p "update kernel rasbberypi (y/n): " update_kernel
+
+if [[ "$update_kernel" == "y" ]]; then
+    echo -e "\e[33mWarning: 'rpi-update' should only be used if there is a specific reason to do so."
+    echo -e "This installs testing versions of the kernel and firmware, which may contain bugs.\e[0m"
+    echo -e "Proceed only if requested by a Raspberry Pi engineer or if you're comfortable with potential regressions and can restore your system if needed.\n"
+    
+    read -p "Are you sure you want to proceed with 'rpi-update'? (y/n): " confirm_update
+    if [[ "$confirm_update" == "y" ]]; then
+        echo -e "\e[34mUpdating kernel version\e[0m"
+        sudo rpi-update
+        echo -e "\e[34mKernel update completed\e[0m"
+
+        # Prompt for reboot
+        read -p "Kernel update requires a reboot. Would you like to reboot now? (y/n): " reboot_now
+        if [[ "$reboot_now" == "y" ]]; then
+            echo -e "\e[34mRebooting system...\e[0m"
+            sudo reboot
+        else
+            echo -e "\e[33mPlease remember to reboot later to apply the kernel update.\e[0m"
+        fi
+    else
+        echo -e "\e[33mKernel update cancelled.\e[0m"
+    fi
+fi
+
+read -p "Would you like to install Tailscale for VPN? (y/n): " install_tailscale
+
 # # Installing Nginx
 # echo -e "\e[34m Instal ngnix\e[0m"
 # sudo apt-get update
@@ -88,6 +116,14 @@ if [ $? -ne 0 ]; then
     sleep 10
     docker exec -it pihole pihole -g
 fi
+
+if [[ "$install_tailscale" == "y" ]]; then
+    echo -e "\e[34m Installing Tailscale\e[0m"
+    curl -fsSL https://tailscale.com/install.sh | sh
+    sudo tailscale up --ssh=true
+    echo -e "\033[0;32mTailscale installed and configured\033[0m"
+fi
+
 
 # Print DONE message
 echo -e "\033[0;32mDONE\033[0m"
