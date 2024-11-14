@@ -2,7 +2,24 @@
 
 set -e
 
-read -p "Would you like to install Tailscale for VPN? (yes/no): " install_tailscale
+read -p "update kernel rasbberypi (y/n): " update_kernel
+
+if [[ "$update_kernel" == "y" ]]; then
+    echo -e "\e[34m Updating kernel version \e[0m"
+    sudo rpi-update 
+    echo -e "\e[34m Updating kernel version completed \e[0m"
+
+    # Prompt for reboot
+    read -p "Kernel update requires a reboot. Would you like to reboot now? (y/n): " reboot_now
+    if [[ "$reboot_now" == "y" ]]; then
+        echo -e "\e[34mRebooting system...\e[0m"
+        sudo reboot
+    else
+        echo -e "\e[33mPlease remember to reboot later to apply the kernel update.\e[0m"
+    fi
+fi
+
+read -p "Would you like to install Tailscale for VPN? (y/n): " install_tailscale
 
 # # Installing Nginx
 # echo -e "\e[34m Instal ngnix\e[0m"
@@ -91,7 +108,7 @@ if [ $? -ne 0 ]; then
     docker exec -it pihole pihole -g
 fi
 
-if [[ "$install_tailscale" == "yes" ]]; then
+if [[ "$install_tailscale" == "y" ]]; then
     echo -e "\e[34m Installing Tailscale\e[0m"
     curl -fsSL https://tailscale.com/install.sh | sh
     sudo tailscale up --ssh=true
