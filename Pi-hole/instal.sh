@@ -146,6 +146,13 @@ fi
 sudo apt-get install fail2ban -y
 echo -e "[sshd]\nbackend=systemd\nenabled=true" | sudo tee /etc/fail2ban/jail.d/defaults-debian.conf
 
+# Firewall
+sudo apt-get install ufw -y
+sudo ufw allow 80/tcp
+sudo ufw allow 22/tcp
+sudo ufw allow 443/tcp
+sudo ufw enable
+
 # Block root user
 sudo passwd -l root
 
