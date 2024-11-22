@@ -151,6 +151,8 @@ sudo apt-get install ufw -y
 sudo ufw allow 80/tcp
 sudo ufw allow 22/tcp
 sudo ufw allow 443/tcp
+sudo ufw allow 67/udp
+sudo ufw allow 53
 sudo ufw enable
 
 # Block root user
