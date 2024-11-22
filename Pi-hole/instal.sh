@@ -107,7 +107,7 @@ while true; do
 done
 
 echo -e "\e[34m importing addlist\e[0m"
-docker exec -it pihole sqlite3 /etc/pihole/gravity.db "INSERT INTO adlist (address) VALUES ('https://gitlab.com/hagezi/mirror/-/raw/main/dns-blocklists/adblock/pro.txt');"
+docker exec -it pihole sqlite3 /etc/pihole/gravity.db "INSERT or IGNORE INTO adlist (address) VALUES ('https://gitlab.com/hagezi/mirror/-/raw/main/dns-blocklists/adblock/pro.txt');"
 docker exec -it pihole pihole -g
 
 # Check for errors and retry if necessary
@@ -124,6 +124,39 @@ if [[ "$install_tailscale" == "y" ]]; then
     echo -e "\033[0;32mTailscale installed and configured\033[0m"
 fi
 
+
+# SSH config
+echo -e "\e[34mSSH configuration to use only rsa key\e[0m"
+mkdir -p ~/.ssh
+touch ~/.ssh/authorized_keys
+chmod 700 ~/.ssh
+chmod 700 ~/.ssh/authorized_keys
+
+read -p "add ssh public key? (y/n): " ssh_key
+
+if [[ "$ssh_key" == "y" ]]; then
+    # Prompt the user for their public SSH key
+    echo "Please enter your public SSH key (or paste it below):"
+    read -p "Public Key: " PUBLIC_KEY
+   # Add the public key to the authorized_keys file
+   echo "$PUBLIC_KEY" >> ~/.ssh/authorized_keys
+fi
+
+# Install fall2ban
+sudo apt-get install fail2ban -y
+echo -e "[sshd]\nbackend=systemd\nenabled=true" | sudo tee /etc/fail2ban/jail.d/defaults-debian.conf
+
+# Firewall
+sudo apt-get install ufw -y
+sudo ufw allow 80/tcp
+sudo ufw allow 22/tcp
+sudo ufw allow 443/tcp
+sudo ufw allow 67/udp
+sudo ufw allow 53
+sudo ufw enable
+
+# Block root user
+sudo passwd -l root
 
 # Print DONE message
 echo -e "\033[0;32mDONE\033[0m"
