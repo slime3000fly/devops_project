@@ -153,7 +153,10 @@ sudo ufw allow ssh
 sudo ufw enable
 
 # Block root user
-sudo passwd -l root
+#!/bin/bash
+
+# Path to the file
+sed -i 's|root:x:0:0:root:/root:/bin/bash|root:x:0:0:root:/root:/sbin/nologin|' "/etc/passwd"
 
 # Print DONE message
 echo -e "\033[0;32mDONE\033[0m"

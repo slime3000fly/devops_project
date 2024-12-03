@@ -2,6 +2,7 @@
 ##What will be instaled
 - Pi-hole
 - taiscalevp
+- HomePage
 ##Requirements
 To set up Pi-hole using this script, you should have a Debian-based operating system.
 Installation
@@ -22,6 +23,9 @@ This script will:
     https://github.com/chamilad/pihole-restore
 ## Update Rasbbery-pi kernetl
 https://github.com/raspberrypi/linux/issues/6170
+## Docker container ip
+docker inspect \
+  -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' container_name_or_id
 
 # TODO:
 - add homepage for entire setup
