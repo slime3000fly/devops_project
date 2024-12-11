@@ -106,6 +106,7 @@ while true; do
     fi
 done
 
+# Pihole configuration
 echo -e "\e[34m importing addlist\e[0m"
 docker exec -it pihole sqlite3 /etc/pihole/gravity.db "INSERT or IGNORE INTO adlist (address) VALUES ('https://gitlab.com/hagezi/mirror/-/raw/main/dns-blocklists/adblock/pro.txt');"
 docker exec -it pihole pihole -g
@@ -124,6 +125,7 @@ if [[ "$install_tailscale" == "y" ]]; then
     echo -e "\033[0;32mTailscale installed and configured\033[0m"
 fi
 
+mv /configs/DNC.config /etc-pihole/custo.list
 
 # SSH config
 echo -e "\e[34mSSH configuration to use only rsa key\e[0m"
@@ -160,3 +162,9 @@ sed -i 's|root:x:0:0:root:/root:/bin/bash|root:x:0:0:root:/root:/sbin/nologin|' 
 
 # Print DONE message
 echo -e "\033[0;32mDONE\033[0m"
+
+
+# HomePage configuration
+cp configs/homepage_config ~/
+WEBPASSWORD=$(docker exec -it pihole cat /etc/pihole/setupVars.conf | grep WEBPASSWORD | cut -d= -f2)
+sed -i "s|key: |key: $PiHole_API|g" homepage_config/services.yaml
