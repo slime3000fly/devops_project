@@ -35,8 +35,6 @@ services:
       - 127.0.0.1:2375:2375
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro # Mounted as read-only
-    networks:
-      - pi-hole_default
     restart: unless-stopped
 
   homepage:
@@ -46,6 +44,4 @@ services:
       - ~/homepage_config:/app/config
     ports:
       - 3000:3000
-    networks:
-      - pi-hole_default
     restart: unless-stopped
