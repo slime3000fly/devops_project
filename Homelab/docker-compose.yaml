@@ -13,7 +13,7 @@ services:
       - "8080:80/tcp"
     environment:
       TZ: 'Europe/Warsaw'
-      WEBPASSWORD: 'admin'
+      WEBPASSWORD: ${PIHOLE_WEBPASSWORD}
     # Volumes store your data between container upgrades
     volumes:
       - '/etc-pihole:/etc/pihole'
@@ -40,6 +40,8 @@ services:
   homepage:
     image: ghcr.io/gethomepage/homepage:latest
     container_name: homepage
+    environment:
+      - HOMEPAGE_VAR_PIHOLE_APIKEY="SET_LATER"
     volumes:
       - ~/homepage_config:/app/config
     ports:
