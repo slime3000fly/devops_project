@@ -1,0 +1,1783 @@
+[2024-12-03T21:50:02.970Z] info: docker.yaml was copied to the config folder
+[2024-12-03T21:50:02.979Z] info: services.yaml was copied to the config folder
+[2024-12-03T21:50:02.982Z] info: bookmarks.yaml was copied to the config folder
+[2024-12-03T21:50:03.015Z] info: widgets.yaml was copied to the config folder
+[2024-12-03T21:50:03.018Z] info: custom.css was copied to the config folder
+[2024-12-03T21:50:03.024Z] info: custom.js was copied to the config folder
+[2024-12-03T21:50:05.485Z] info: kubernetes.yaml was copied to the config folder
+[2024-12-03T21:51:49.081Z] error: Failed to load widgets, please check widgets.yaml for errors or remove example entries.
+[2024-12-03T21:51:49.086Z] error: end of the stream or a document separator is expected (14:1)
+
+ 11 |     provider: duckduckgo
+ 12 |     target: _blank
+ 13 | 
+ 14 | widget:
+------^
+ 15 |   type: pihole
+ 16 |   url: http://172.19.0.2
+[2024-12-03T21:51:49.242Z] error: Failed to load widgets, please check widgets.yaml for errors or remove example entries.
+[2024-12-03T21:51:49.248Z] error: end of the stream or a document separator is expected (14:1)
+
+ 11 |     provider: duckduckgo
+ 12 |     target: _blank
+ 13 | 
+ 14 | widget:
+------^
+ 15 |   type: pihole
+ 16 |   url: http://172.19.0.2
+[2024-12-03T21:51:49.914Z] error: Failed to load widgets, please check widgets.yaml for errors or remove example entries.
+[2024-12-03T21:51:49.915Z] error: end of the stream or a document separator is expected (14:1)
+
+ 11 |     provider: duckduckgo
+ 12 |     target: _blank
+ 13 | 
+ 14 | widget:
+------^
+ 15 |   type: pihole
+ 16 |   url: http://172.19.0.2
+[2024-12-03T21:55:59.423Z] error: Failed to discover services, please check docker.yaml for errors or remove example entries.
+[2024-12-03T21:55:59.436Z] error: YAMLException: duplicated mapping key (9:1)
+
+  6 |    host: 127.0.0.1
+  7 |    port: 2375
+  8 | 
+  9 | my-docker:
+------^
+ 10 |    socket: /var/run/docker.sock
+[2024-12-03T21:55:59.504Z] error: Failed to discover services, please check docker.yaml for errors or remove example entries.
+[2024-12-03T21:55:59.506Z] error: YAMLException: duplicated mapping key (9:1)
+
+  6 |    host: 127.0.0.1
+  7 |    port: 2375
+  8 | 
+  9 | my-docker:
+------^
+ 10 |    socket: /var/run/docker.sock
+[2024-12-03T21:56:00.251Z] error: Failed to discover services, please check docker.yaml for errors or remove example entries.
+[2024-12-03T21:56:00.253Z] error: YAMLException: duplicated mapping key (9:1)
+
+  6 |    host: 127.0.0.1
+  7 |    port: 2375
+  8 | 
+  9 | my-docker:
+------^
+ 10 |    socket: /var/run/docker.sock
+[2024-12-03T21:56:18.857Z] error: <service-helpers> Error getting services from Docker server 'my-docker2': Error: connect EACCES /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+  errno: -13,
+  code: 'EACCES',
+  syscall: 'connect',
+  address: '/var/run/docker.sock'
+}
+[2024-12-03T21:56:18.865Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: connect ECONNREFUSED 127.0.0.1:2375
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '127.0.0.1',
+  port: 2375
+}
+[2024-12-03T21:56:19.591Z] error: <service-helpers> Error getting services from Docker server 'my-docker2': Error: connect EACCES /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+  errno: -13,
+  code: 'EACCES',
+  syscall: 'connect',
+  address: '/var/run/docker.sock'
+}
+[2024-12-03T21:56:19.601Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: connect ECONNREFUSED 127.0.0.1:2375
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '127.0.0.1',
+  port: 2375
+}
+[2024-12-03T21:56:36.139Z] error: <service-helpers> Error getting services from Docker server 'my-docker2': Error: connect EACCES /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+  errno: -13,
+  code: 'EACCES',
+  syscall: 'connect',
+  address: '/var/run/docker.sock'
+}
+[2024-12-03T21:56:36.178Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: connect ECONNREFUSED 127.0.0.1:2375
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '127.0.0.1',
+  port: 2375
+}
+[2024-12-03T21:57:44.160Z] error: Failed to load widgets, please check widgets.yaml for errors or remove example entries.
+[2024-12-03T21:57:44.178Z] error: <service-helpers> Error getting services from Docker server 'my-docker2': Error: connect EACCES /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+  errno: -13,
+  code: 'EACCES',
+  syscall: 'connect',
+  address: '/var/run/docker.sock'
+}
+[2024-12-03T21:57:44.164Z] error: end of the stream or a document separator is expected (14:1)
+
+ 11 |     provider: duckduckgo
+ 12 |     target: _blank
+ 13 | 
+ 14 | widgets:
+------^
+ 15 |   - type: docker
+ 16 |     name: my-docker
+[2024-12-03T21:57:44.204Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: connect ECONNREFUSED 127.0.0.1:2375
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '127.0.0.1',
+  port: 2375
+}
+[2024-12-03T21:57:44.242Z] error: <service-helpers> Error getting services from Docker server 'my-docker2': Error: connect EACCES /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+  errno: -13,
+  code: 'EACCES',
+  syscall: 'connect',
+  address: '/var/run/docker.sock'
+}
+[2024-12-03T21:57:44.246Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: connect ECONNREFUSED 127.0.0.1:2375
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '127.0.0.1',
+  port: 2375
+}
+[2024-12-03T21:57:44.260Z] error: Failed to load widgets, please check widgets.yaml for errors or remove example entries.
+[2024-12-03T21:57:44.265Z] error: end of the stream or a document separator is expected (14:1)
+
+ 11 |     provider: duckduckgo
+ 12 |     target: _blank
+ 13 | 
+ 14 | widgets:
+------^
+ 15 |   - type: docker
+ 16 |     name: my-docker
+[2024-12-03T21:57:44.800Z] error: Failed to load widgets, please check widgets.yaml for errors or remove example entries.
+[2024-12-03T21:57:44.820Z] error: <service-helpers> Error getting services from Docker server 'my-docker2': Error: connect EACCES /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+  errno: -13,
+  code: 'EACCES',
+  syscall: 'connect',
+  address: '/var/run/docker.sock'
+}
+[2024-12-03T21:57:44.802Z] error: end of the stream or a document separator is expected (14:1)
+
+ 11 |     provider: duckduckgo
+ 12 |     target: _blank
+ 13 | 
+ 14 | widgets:
+------^
+ 15 |   - type: docker
+ 16 |     name: my-docker
+[2024-12-03T21:57:44.854Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: connect ECONNREFUSED 127.0.0.1:2375
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '127.0.0.1',
+  port: 2375
+}
+[2024-12-03T21:57:50.761Z] error: Failed to load widgets, please check widgets.yaml for errors or remove example entries.
+[2024-12-03T21:57:50.777Z] error: <service-helpers> Error getting services from Docker server 'my-docker2': Error: connect EACCES /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+  errno: -13,
+  code: 'EACCES',
+  syscall: 'connect',
+  address: '/var/run/docker.sock'
+}
+[2024-12-03T21:57:50.763Z] error: end of the stream or a document separator is expected (14:1)
+
+ 11 |     provider: duckduckgo
+ 12 |     target: _blank
+ 13 | 
+ 14 | widgets:
+------^
+ 15 |   - type: docker
+ 16 |     name: my-docker
+[2024-12-03T21:57:50.788Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: connect ECONNREFUSED 127.0.0.1:2375
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '127.0.0.1',
+  port: 2375
+}
+[2024-12-03T21:58:52.440Z] error: <service-helpers> Error getting services from Docker server 'my-docker2': Error: connect EACCES /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+  errno: -13,
+  code: 'EACCES',
+  syscall: 'connect',
+  address: '/var/run/docker.sock'
+}
+[2024-12-03T21:58:52.450Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: connect ECONNREFUSED 127.0.0.1:2375
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '127.0.0.1',
+  port: 2375
+}
+[2024-12-03T21:58:52.475Z] error: <service-helpers> Error getting services from Docker server 'my-docker2': Error: connect EACCES /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+  errno: -13,
+  code: 'EACCES',
+  syscall: 'connect',
+  address: '/var/run/docker.sock'
+}
+[2024-12-03T21:58:52.480Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: connect ECONNREFUSED 127.0.0.1:2375
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '127.0.0.1',
+  port: 2375
+}
+[2024-12-03T21:58:53.275Z] error: <service-helpers> Error getting services from Docker server 'my-docker2': Error: connect EACCES /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+  errno: -13,
+  code: 'EACCES',
+  syscall: 'connect',
+  address: '/var/run/docker.sock'
+}
+[2024-12-03T21:58:53.292Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: connect ECONNREFUSED 127.0.0.1:2375
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '127.0.0.1',
+  port: 2375
+}
+[2024-12-03T21:59:37.163Z] error: <service-helpers> Error getting services from Docker server 'my-docker2': Error: connect EACCES /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+  errno: -13,
+  code: 'EACCES',
+  syscall: 'connect',
+  address: '/var/run/docker.sock'
+}
+[2024-12-03T21:59:37.191Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: connect ECONNREFUSED 127.0.0.1:2375
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '127.0.0.1',
+  port: 2375
+}
+[2024-12-03T21:59:37.234Z] error: <service-helpers> Error getting services from Docker server 'my-docker2': Error: connect EACCES /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+  errno: -13,
+  code: 'EACCES',
+  syscall: 'connect',
+  address: '/var/run/docker.sock'
+}
+[2024-12-03T21:59:37.239Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: connect ECONNREFUSED 127.0.0.1:2375
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '127.0.0.1',
+  port: 2375
+}
+[2024-12-03T21:59:37.989Z] error: <service-helpers> Error getting services from Docker server 'my-docker2': Error: connect EACCES /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+  errno: -13,
+  code: 'EACCES',
+  syscall: 'connect',
+  address: '/var/run/docker.sock'
+}
+[2024-12-03T21:59:38.013Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: connect ECONNREFUSED 127.0.0.1:2375
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '127.0.0.1',
+  port: 2375
+}
+[2024-12-03T22:00:51.735Z] error: <service-helpers> Error getting services from Docker server 'my-docker2': Error: connect EACCES /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+  errno: -13,
+  code: 'EACCES',
+  syscall: 'connect',
+  address: '/var/run/docker.sock'
+}
+[2024-12-03T22:00:51.742Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: connect ECONNREFUSED 127.0.0.1:2375
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '127.0.0.1',
+  port: 2375
+}
+[2024-12-03T22:00:51.794Z] error: <service-helpers> Error getting services from Docker server 'my-docker2': Error: connect EACCES /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+  errno: -13,
+  code: 'EACCES',
+  syscall: 'connect',
+  address: '/var/run/docker.sock'
+}
+[2024-12-03T22:00:51.800Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: connect ECONNREFUSED 127.0.0.1:2375
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '127.0.0.1',
+  port: 2375
+}
+[2024-12-03T22:00:52.497Z] error: <service-helpers> Error getting services from Docker server 'my-docker2': Error: connect EACCES /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+  errno: -13,
+  code: 'EACCES',
+  syscall: 'connect',
+  address: '/var/run/docker.sock'
+}
+[2024-12-03T22:00:52.505Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: connect ECONNREFUSED 127.0.0.1:2375
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '127.0.0.1',
+  port: 2375
+}
+[2024-12-03T22:04:28.469Z] error: <service-helpers> Error getting services from Docker server 'my-docker2': Error: connect EACCES /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+  errno: -13,
+  code: 'EACCES',
+  syscall: 'connect',
+  address: '/var/run/docker.sock'
+}
+[2024-12-03T22:04:28.480Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: connect ECONNREFUSED 127.0.0.1:2375
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '127.0.0.1',
+  port: 2375
+}
+[2024-12-03T22:04:28.516Z] error: <service-helpers> Error getting services from Docker server 'my-docker2': Error: connect EACCES /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+  errno: -13,
+  code: 'EACCES',
+  syscall: 'connect',
+  address: '/var/run/docker.sock'
+}
+[2024-12-03T22:04:28.522Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: connect ECONNREFUSED 127.0.0.1:2375
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '127.0.0.1',
+  port: 2375
+}
+[2024-12-03T22:04:30.011Z] error: <service-helpers> Error getting services from Docker server 'my-docker2': Error: connect EACCES /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+  errno: -13,
+  code: 'EACCES',
+  syscall: 'connect',
+  address: '/var/run/docker.sock'
+}
+[2024-12-03T22:04:30.036Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: connect ECONNREFUSED 127.0.0.1:2375
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '127.0.0.1',
+  port: 2375
+}
+[2024-12-03T22:04:40.895Z] error: <service-helpers> Error getting services from Docker server 'my-docker2': Error: connect EACCES /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+  errno: -13,
+  code: 'EACCES',
+  syscall: 'connect',
+  address: '/var/run/docker.sock'
+}
+[2024-12-03T22:04:40.918Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: connect ECONNREFUSED 127.0.0.1:2375
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '127.0.0.1',
+  port: 2375
+}
+[2024-12-03T22:05:22.495Z] error: <service-helpers> Error getting services from Docker server 'my-docker2': Error: connect EACCES /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+  errno: -13,
+  code: 'EACCES',
+  syscall: 'connect',
+  address: '/var/run/docker.sock'
+}
+[2024-12-03T22:05:22.503Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: connect ECONNREFUSED 127.0.0.1:2375
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '127.0.0.1',
+  port: 2375
+}
+[2024-12-03T22:05:22.681Z] error: <service-helpers> Error getting services from Docker server 'my-docker2': Error: connect EACCES /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+  errno: -13,
+  code: 'EACCES',
+  syscall: 'connect',
+  address: '/var/run/docker.sock'
+}
+[2024-12-03T22:05:22.684Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: connect ECONNREFUSED 127.0.0.1:2375
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '127.0.0.1',
+  port: 2375
+}
+[2024-12-03T22:05:23.476Z] error: <service-helpers> Error getting services from Docker server 'my-docker2': Error: connect EACCES /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+  errno: -13,
+  code: 'EACCES',
+  syscall: 'connect',
+  address: '/var/run/docker.sock'
+}
+[2024-12-03T22:05:23.509Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: connect ECONNREFUSED 127.0.0.1:2375
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '127.0.0.1',
+  port: 2375
+}
+[2024-12-03T22:06:49.395Z] error: <httpProxy> Error calling http://172.19.0.2/admin/api.php...
+[2024-12-03T22:06:49.400Z] error: <httpProxy> [
+  500,
+  Error: connect ETIMEDOUT 172.19.0.2:80
+      at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+    errno: -110,
+    code: 'ETIMEDOUT',
+    syscall: 'connect',
+    address: '172.19.0.2',
+    port: 80
+  }
+]
+[2024-12-03T22:07:40.603Z] error: <httpProxy> Error calling http://172.19.0.2/admin/api.php...
+[2024-12-03T22:07:40.605Z] error: <httpProxy> [
+  500,
+  Error: connect ETIMEDOUT 172.19.0.2:80
+      at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+    errno: -110,
+    code: 'ETIMEDOUT',
+    syscall: 'connect',
+    address: '172.19.0.2',
+    port: 80
+  }
+]
+[2024-12-03T22:07:40.610Z] error: <httpProxy> Error calling http://172.19.0.2/admin/api.php...
+[2024-12-03T22:07:40.613Z] error: <httpProxy> [
+  500,
+  Error: connect ETIMEDOUT 172.19.0.2:80
+      at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+    errno: -110,
+    code: 'ETIMEDOUT',
+    syscall: 'connect',
+    address: '172.19.0.2',
+    port: 80
+  }
+]
+[2024-12-04T17:10:36.653Z] error: <service-helpers> Error getting services from Docker server 'my-docker2': Error: connect EACCES /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+  errno: -13,
+  code: 'EACCES',
+  syscall: 'connect',
+  address: '/var/run/docker.sock'
+}
+[2024-12-04T17:10:36.660Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: connect ECONNREFUSED 127.0.0.1:2375
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '127.0.0.1',
+  port: 2375
+}
+[2024-12-04T17:11:07.457Z] error: <service-helpers> Error getting services from Docker server 'my-docker2': Error: connect EACCES /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+  errno: -13,
+  code: 'EACCES',
+  syscall: 'connect',
+  address: '/var/run/docker.sock'
+}
+[2024-12-04T17:11:07.463Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: connect ECONNREFUSED 127.0.0.1:2375
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '127.0.0.1',
+  port: 2375
+}
+[2024-12-04T17:12:50.995Z] error: <httpProxy> Error calling http://172.19.0.2/admin/api.php...
+[2024-12-04T17:12:50.999Z] error: <httpProxy> [
+  500,
+  Error: connect ETIMEDOUT 172.19.0.2:80
+      at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+    errno: -110,
+    code: 'ETIMEDOUT',
+    syscall: 'connect',
+    address: '172.19.0.2',
+    port: 80
+  }
+]
+[2024-12-04T17:13:34.592Z] error: <service-helpers> Error getting services from Docker server 'my-docker2': Error: connect EACCES /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+  errno: -13,
+  code: 'EACCES',
+  syscall: 'connect',
+  address: '/var/run/docker.sock'
+}
+[2024-12-04T17:13:34.607Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: connect ECONNREFUSED 127.0.0.1:2375
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '127.0.0.1',
+  port: 2375
+}
+[2024-12-04T17:13:47.670Z] error: <service-helpers> Error getting services from Docker server 'my-docker2': Error: connect EACCES /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+  errno: -13,
+  code: 'EACCES',
+  syscall: 'connect',
+  address: '/var/run/docker.sock'
+}
+[2024-12-04T17:13:47.677Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: connect ECONNREFUSED 127.0.0.1:2375
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '127.0.0.1',
+  port: 2375
+}
+[2024-12-04T17:13:49.318Z] error: <service-helpers> Error getting services from Docker server 'my-docker2': Error: connect EACCES /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+  errno: -13,
+  code: 'EACCES',
+  syscall: 'connect',
+  address: '/var/run/docker.sock'
+}
+[2024-12-04T17:13:49.333Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: connect ECONNREFUSED 127.0.0.1:2375
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '127.0.0.1',
+  port: 2375
+}
+[2024-12-04T17:13:57.157Z] error: <service-helpers> Error getting services from Docker server 'my-docker2': Error: connect EACCES /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+  errno: -13,
+  code: 'EACCES',
+  syscall: 'connect',
+  address: '/var/run/docker.sock'
+}
+[2024-12-04T17:13:57.162Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: connect ECONNREFUSED 127.0.0.1:2375
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '127.0.0.1',
+  port: 2375
+}
+[2024-12-04T17:15:50.194Z] error: <httpProxy> Error calling http://172.19.0.2/admin/api.php...
+[2024-12-04T17:15:50.197Z] error: <httpProxy> [
+  500,
+  Error: connect ETIMEDOUT 172.19.0.2:80
+      at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+    errno: -110,
+    code: 'ETIMEDOUT',
+    syscall: 'connect',
+    address: '172.19.0.2',
+    port: 80
+  }
+]
+[2024-12-04T17:16:05.557Z] error: <httpProxy> Error calling http://172.19.0.2/admin/api.php...
+[2024-12-04T17:16:05.560Z] error: <httpProxy> [
+  500,
+  Error: connect ETIMEDOUT 172.19.0.2:80
+      at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+    errno: -110,
+    code: 'ETIMEDOUT',
+    syscall: 'connect',
+    address: '172.19.0.2',
+    port: 80
+  }
+]
+[2024-12-04T17:19:58.374Z] error: <service-helpers> Error getting services from Docker server 'my-docker2': Error: connect EACCES /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+  errno: -13,
+  code: 'EACCES',
+  syscall: 'connect',
+  address: '/var/run/docker.sock'
+}
+[2024-12-04T17:19:58.383Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: connect ECONNREFUSED 127.0.0.1:2375
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '127.0.0.1',
+  port: 2375
+}
+[2024-12-04T17:19:58.477Z] error: <service-helpers> Error getting services from Docker server 'my-docker2': Error: connect EACCES /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+  errno: -13,
+  code: 'EACCES',
+  syscall: 'connect',
+  address: '/var/run/docker.sock'
+}
+[2024-12-04T17:19:58.481Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: connect ECONNREFUSED 127.0.0.1:2375
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '127.0.0.1',
+  port: 2375
+}
+[2024-12-04T17:19:59.519Z] error: <service-helpers> Error getting services from Docker server 'my-docker2': Error: connect EACCES /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+  errno: -13,
+  code: 'EACCES',
+  syscall: 'connect',
+  address: '/var/run/docker.sock'
+}
+[2024-12-04T17:19:59.559Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: connect ECONNREFUSED 127.0.0.1:2375
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '127.0.0.1',
+  port: 2375
+}
+[2024-12-04T17:19:59.574Z] error: <dockerStatusService> Error: connect EACCES /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16)
+[2024-12-04T17:20:08.977Z] error: <service-helpers> Error getting services from Docker server 'my-docker2': Error: connect EACCES /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+  errno: -13,
+  code: 'EACCES',
+  syscall: 'connect',
+  address: '/var/run/docker.sock'
+}
+[2024-12-04T17:20:08.983Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: connect ECONNREFUSED 127.0.0.1:2375
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '127.0.0.1',
+  port: 2375
+}
+[2024-12-04T17:20:09.025Z] error: <dockerStatusService> Error: connect EACCES /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16)
+[2024-12-04T17:21:12.954Z] error: <service-helpers> Error getting services from Docker server 'my-docker2': Error: connect EACCES /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+  errno: -13,
+  code: 'EACCES',
+  syscall: 'connect',
+  address: '/var/run/docker.sock'
+}
+[2024-12-04T17:21:12.958Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: connect ECONNREFUSED 127.0.0.1:2375
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '127.0.0.1',
+  port: 2375
+}
+[2024-12-04T17:21:13.002Z] error: <dockerStatusService> Error: connect EACCES /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16)
+[2024-12-04T17:21:13.029Z] error: <service-helpers> Error getting services from Docker server 'my-docker2': Error: connect EACCES /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+  errno: -13,
+  code: 'EACCES',
+  syscall: 'connect',
+  address: '/var/run/docker.sock'
+}
+[2024-12-04T17:21:13.033Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: connect ECONNREFUSED 127.0.0.1:2375
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '127.0.0.1',
+  port: 2375
+}
+[2024-12-04T17:21:13.749Z] error: <service-helpers> Error getting services from Docker server 'my-docker2': Error: connect EACCES /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+  errno: -13,
+  code: 'EACCES',
+  syscall: 'connect',
+  address: '/var/run/docker.sock'
+}
+[2024-12-04T17:21:13.753Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: connect ECONNREFUSED 127.0.0.1:2375
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '127.0.0.1',
+  port: 2375
+}
+[2024-12-04T17:21:17.082Z] error: <service-helpers> Error getting services from Docker server 'my-docker2': Error: connect EACCES /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+  errno: -13,
+  code: 'EACCES',
+  syscall: 'connect',
+  address: '/var/run/docker.sock'
+}
+[2024-12-04T17:21:17.087Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: connect ECONNREFUSED 127.0.0.1:2375
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '127.0.0.1',
+  port: 2375
+}
+[2024-12-04T17:21:25.908Z] error: <service-helpers> Error getting services from Docker server 'my-docker2': Error: connect EACCES /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+  errno: -13,
+  code: 'EACCES',
+  syscall: 'connect',
+  address: '/var/run/docker.sock'
+}
+[2024-12-04T17:21:25.929Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: connect ECONNREFUSED 127.0.0.1:2375
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '127.0.0.1',
+  port: 2375
+}
+[2024-12-04T17:22:14.194Z] error: <httpProxy> Error calling http://172.19.0.2/admin/api.php...
+[2024-12-04T17:22:14.197Z] error: <httpProxy> [
+  500,
+  Error: connect ETIMEDOUT 172.19.0.2:80
+      at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+    errno: -110,
+    code: 'ETIMEDOUT',
+    syscall: 'connect',
+    address: '172.19.0.2',
+    port: 80
+  }
+]
+[2024-12-04T17:22:14.205Z] error: <httpProxy> Error calling http://172.19.0.2/admin/api.php...
+[2024-12-04T17:22:14.208Z] error: <httpProxy> [
+  500,
+  Error: connect ETIMEDOUT 172.19.0.2:80
+      at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+    errno: -110,
+    code: 'ETIMEDOUT',
+    syscall: 'connect',
+    address: '172.19.0.2',
+    port: 80
+  }
+]
+[2024-12-04T17:22:54.810Z] error: <service-helpers> Error getting services from Docker server 'my-docker2': Error: connect EACCES /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+  errno: -13,
+  code: 'EACCES',
+  syscall: 'connect',
+  address: '/var/run/docker.sock'
+}
+[2024-12-04T17:22:54.845Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: connect ECONNREFUSED 127.0.0.1:2375
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '127.0.0.1',
+  port: 2375
+}
+[2024-12-04T17:22:54.863Z] error: <service-helpers> Error getting services from Docker server 'my-docker2': Error: connect EACCES /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+  errno: -13,
+  code: 'EACCES',
+  syscall: 'connect',
+  address: '/var/run/docker.sock'
+}
+[2024-12-04T17:22:54.866Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: connect ECONNREFUSED 127.0.0.1:2375
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '127.0.0.1',
+  port: 2375
+}
+[2024-12-04T17:22:55.589Z] error: <service-helpers> Error getting services from Docker server 'my-docker2': Error: connect EACCES /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+  errno: -13,
+  code: 'EACCES',
+  syscall: 'connect',
+  address: '/var/run/docker.sock'
+}
+[2024-12-04T17:22:55.594Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: connect ECONNREFUSED 127.0.0.1:2375
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '127.0.0.1',
+  port: 2375
+}
+[2024-12-07T17:16:05.061Z] error: <service-helpers> Error getting services from Docker server 'my-docker2': Error: connect EACCES /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+  errno: -13,
+  code: 'EACCES',
+  syscall: 'connect',
+  address: '/var/run/docker.sock'
+}
+[2024-12-07T17:16:05.073Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: connect ECONNREFUSED 127.0.0.1:2375
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '127.0.0.1',
+  port: 2375
+}
+[2024-12-07T17:16:05.103Z] error: <service-helpers> Error getting services from Docker server 'my-docker2': Error: connect EACCES /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+  errno: -13,
+  code: 'EACCES',
+  syscall: 'connect',
+  address: '/var/run/docker.sock'
+}
+[2024-12-07T17:16:05.113Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: connect ECONNREFUSED 127.0.0.1:2375
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '127.0.0.1',
+  port: 2375
+}
+[2024-12-07T17:16:06.060Z] error: <service-helpers> Error getting services from Docker server 'my-docker2': Error: connect EACCES /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+  errno: -13,
+  code: 'EACCES',
+  syscall: 'connect',
+  address: '/var/run/docker.sock'
+}
+[2024-12-07T17:16:06.068Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: connect ECONNREFUSED 127.0.0.1:2375
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '127.0.0.1',
+  port: 2375
+}
+[2024-12-07T17:16:32.809Z] error: <service-helpers> Error getting services from Docker server 'my-docker2': Error: connect EACCES /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+  errno: -13,
+  code: 'EACCES',
+  syscall: 'connect',
+  address: '/var/run/docker.sock'
+}
+[2024-12-07T17:16:32.821Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: connect ECONNREFUSED 127.0.0.1:2375
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '127.0.0.1',
+  port: 2375
+}
+[2024-12-07T17:16:32.839Z] error: <service-helpers> Error getting services from Docker server 'my-docker2': Error: connect EACCES /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+  errno: -13,
+  code: 'EACCES',
+  syscall: 'connect',
+  address: '/var/run/docker.sock'
+}
+[2024-12-07T17:16:32.843Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: connect ECONNREFUSED 127.0.0.1:2375
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '127.0.0.1',
+  port: 2375
+}
+[2024-12-07T17:16:33.421Z] error: <service-helpers> Error getting services from Docker server 'my-docker2': Error: connect EACCES /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+  errno: -13,
+  code: 'EACCES',
+  syscall: 'connect',
+  address: '/var/run/docker.sock'
+}
+[2024-12-07T17:16:33.428Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: connect ECONNREFUSED 127.0.0.1:2375
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '127.0.0.1',
+  port: 2375
+}
+[2024-12-07T17:16:46.701Z] error: <service-helpers> Error getting services from Docker server 'my-docker2': Error: connect EACCES /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+  errno: -13,
+  code: 'EACCES',
+  syscall: 'connect',
+  address: '/var/run/docker.sock'
+}
+[2024-12-07T17:16:46.706Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: connect ECONNREFUSED 127.0.0.1:2375
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '127.0.0.1',
+  port: 2375
+}
+[2024-12-07T17:16:55.408Z] error: <service-helpers> Error getting services from Docker server 'my-docker2': Error: connect EACCES /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+  errno: -13,
+  code: 'EACCES',
+  syscall: 'connect',
+  address: '/var/run/docker.sock'
+}
+[2024-12-07T17:16:55.418Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: connect ECONNREFUSED 127.0.0.1:2375
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '127.0.0.1',
+  port: 2375
+}
+[2024-12-07T17:17:10.939Z] error: <service-helpers> Error getting services from Docker server 'my-docker2': Error: connect EACCES /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+  errno: -13,
+  code: 'EACCES',
+  syscall: 'connect',
+  address: '/var/run/docker.sock'
+}
+[2024-12-07T17:17:10.947Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: connect ECONNREFUSED 127.0.0.1:2375
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '127.0.0.1',
+  port: 2375
+}
+[2024-12-07T17:17:18.390Z] error: <service-helpers> Error getting services from Docker server 'my-docker2': Error: connect EACCES /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+  errno: -13,
+  code: 'EACCES',
+  syscall: 'connect',
+  address: '/var/run/docker.sock'
+}
+[2024-12-07T17:17:18.418Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: connect ECONNREFUSED 127.0.0.1:2375
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '127.0.0.1',
+  port: 2375
+}
+[2024-12-07T17:17:18.439Z] error: <service-helpers> Error getting services from Docker server 'my-docker2': Error: connect EACCES /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+  errno: -13,
+  code: 'EACCES',
+  syscall: 'connect',
+  address: '/var/run/docker.sock'
+}
+[2024-12-07T17:17:18.443Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: connect ECONNREFUSED 127.0.0.1:2375
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '127.0.0.1',
+  port: 2375
+}
+[2024-12-07T17:17:19.128Z] error: <service-helpers> Error getting services from Docker server 'my-docker2': Error: connect EACCES /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+  errno: -13,
+  code: 'EACCES',
+  syscall: 'connect',
+  address: '/var/run/docker.sock'
+}
+[2024-12-07T17:17:19.135Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: connect ECONNREFUSED 127.0.0.1:2375
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '127.0.0.1',
+  port: 2375
+}
+[2024-12-07T17:17:26.234Z] error: <service-helpers> Error getting services from Docker server 'my-docker2': Error: connect EACCES /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+  errno: -13,
+  code: 'EACCES',
+  syscall: 'connect',
+  address: '/var/run/docker.sock'
+}
+[2024-12-07T17:17:26.237Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: connect ECONNREFUSED 127.0.0.1:2375
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '127.0.0.1',
+  port: 2375
+}
+[2024-12-07T17:17:37.104Z] error: <service-helpers> Error getting services from Docker server 'my-docker2': Error: connect EACCES /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+  errno: -13,
+  code: 'EACCES',
+  syscall: 'connect',
+  address: '/var/run/docker.sock'
+}
+[2024-12-07T17:17:37.110Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: connect ECONNREFUSED 127.0.0.1:2375
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '127.0.0.1',
+  port: 2375
+}
+[2024-12-07T17:21:51.549Z] error: <service-helpers> Error getting services from Docker server 'my-docker2': Error: connect EACCES /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+  errno: -13,
+  code: 'EACCES',
+  syscall: 'connect',
+  address: '/var/run/docker.sock'
+}
+[2024-12-07T17:21:51.557Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: connect ECONNREFUSED 127.0.0.1:2375
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16) {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '127.0.0.1',
+  port: 2375
+}
+[2024-12-07T17:35:51.202Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: getaddrinfo ENOTFOUND dockerproxy
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:107:26) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'dockerproxy'
+}
+[2024-12-07T17:35:53.463Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: getaddrinfo ENOTFOUND dockerproxy
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:107:26) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'dockerproxy'
+}
+[2024-12-07T17:35:55.149Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: getaddrinfo ENOTFOUND dockerproxy
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:107:26) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'dockerproxy'
+}
+[2024-12-07T17:36:02.438Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: getaddrinfo ENOTFOUND dockerproxy
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:107:26) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'dockerproxy'
+}
+[2024-12-07T17:36:03.844Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: getaddrinfo ENOTFOUND dockerproxy
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:107:26) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'dockerproxy'
+}
+[2024-12-07T17:36:24.533Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: getaddrinfo ENOTFOUND dockerproxy
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:107:26) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'dockerproxy'
+}
+[2024-12-07T17:36:50.408Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: getaddrinfo ENOTFOUND dockerproxy
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:107:26) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'dockerproxy'
+}
+[2024-12-07T17:37:11.964Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: getaddrinfo ENOTFOUND dockerproxy
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:107:26) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'dockerproxy'
+}
+[2024-12-07T17:37:15.839Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: getaddrinfo ENOTFOUND dockerproxy
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:107:26) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'dockerproxy'
+}
+[2024-12-07T17:41:05.267Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: getaddrinfo ENOTFOUND dockerproxy
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:107:26) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'dockerproxy'
+}
+[2024-12-07T17:41:05.327Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: getaddrinfo ENOTFOUND dockerproxy
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:107:26) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'dockerproxy'
+}
+[2024-12-07T17:41:05.877Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: getaddrinfo ENOTFOUND dockerproxy
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:107:26) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'dockerproxy'
+}
+[2024-12-07T17:41:36.746Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: getaddrinfo ENOTFOUND dockerproxy
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:107:26) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'dockerproxy'
+}
+[2024-12-07T17:41:36.784Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: getaddrinfo ENOTFOUND dockerproxy
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:107:26) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'dockerproxy'
+}
+[2024-12-07T17:41:37.425Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: getaddrinfo ENOTFOUND dockerproxy
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:107:26) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'dockerproxy'
+}
+[2024-12-07T18:10:15.865Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: getaddrinfo ENOTFOUND dockerproxy
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:107:26) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'dockerproxy'
+}
+[2024-12-08T22:09:35.145Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: getaddrinfo ENOTFOUND dockerproxy
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:107:26) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'dockerproxy'
+}
+[2024-12-08T22:09:35.276Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: getaddrinfo ENOTFOUND dockerproxy
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:107:26) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'dockerproxy'
+}
+[2024-12-08T22:09:36.480Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: getaddrinfo ENOTFOUND dockerproxy
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:107:26) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'dockerproxy'
+}
+[2024-12-08T22:09:59.875Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: getaddrinfo ENOTFOUND dockerproxy
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:107:26) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'dockerproxy'
+}
+[2024-12-08T22:11:41.719Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: getaddrinfo ENOTFOUND dockerproxy
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:107:26) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'dockerproxy'
+}
+[2024-12-08T22:11:41.803Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: getaddrinfo ENOTFOUND dockerproxy
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:107:26) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'dockerproxy'
+}
+[2024-12-08T22:11:42.691Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: getaddrinfo ENOTFOUND dockerproxy
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:107:26) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'dockerproxy'
+}
+[2024-12-08T22:11:58.745Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: getaddrinfo ENOTFOUND dockerproxy
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:107:26) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'dockerproxy'
+}
+[2024-12-08T22:12:37.855Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: getaddrinfo ENOTFOUND dockerproxy
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:107:26) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'dockerproxy'
+}
+[2024-12-08T22:12:37.929Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: getaddrinfo ENOTFOUND dockerproxy
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:107:26) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'dockerproxy'
+}
+[2024-12-08T22:12:38.815Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: getaddrinfo ENOTFOUND dockerproxy
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:107:26) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'dockerproxy'
+}
+[2024-12-08T22:12:57.811Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: getaddrinfo ENOTFOUND dockerproxy
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:107:26) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'dockerproxy'
+}
+[2024-12-08T22:12:57.876Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: getaddrinfo ENOTFOUND dockerproxy
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:107:26) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'dockerproxy'
+}
+[2024-12-08T22:12:58.709Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: getaddrinfo ENOTFOUND dockerproxy
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:107:26) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'dockerproxy'
+}
+[2024-12-08T22:13:16.422Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: getaddrinfo ENOTFOUND dockerproxy
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:107:26) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'dockerproxy'
+}
+[2024-12-08T22:13:16.486Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: getaddrinfo ENOTFOUND dockerproxy
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:107:26) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'dockerproxy'
+}
+[2024-12-08T22:13:17.284Z] error: <dockerStatusService> TypeError: Cannot read properties of null (reading 'conn')
+    at handler (/app/.next/server/pages/api/docker/status/[...service].js:89:86)
+    at Object.apiResolver (/app/node_modules/.pnpm/next@12.3.4_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/api-utils/node.js:366:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NextNodeServer.runApi (/app/node_modules/.pnpm/next@12.3.4_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/next-server.js:481:9)
+    at async Object.fn (/app/node_modules/.pnpm/next@12.3.4_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/next-server.js:741:37)
+    at async Router.execute (/app/node_modules/.pnpm/next@12.3.4_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/router.js:252:36)
+    at async NextNodeServer.run (/app/node_modules/.pnpm/next@12.3.4_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/base-server.js:365:29)
+    at async NextNodeServer.handleRequest (/app/node_modules/.pnpm/next@12.3.4_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/base-server.js:303:20)
+    at async Server.<anonymous> (/app/server.js:19:5)
+[2024-12-08T22:13:17.378Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: getaddrinfo ENOTFOUND dockerproxy
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:107:26) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'dockerproxy'
+}
+[2024-12-08T22:13:59.860Z] error: <dockerStatusService> TypeError: Cannot read properties of null (reading 'conn')
+    at handler (/app/.next/server/pages/api/docker/status/[...service].js:89:86)
+    at Object.apiResolver (/app/node_modules/.pnpm/next@12.3.4_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/api-utils/node.js:366:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NextNodeServer.runApi (/app/node_modules/.pnpm/next@12.3.4_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/next-server.js:481:9)
+    at async Object.fn (/app/node_modules/.pnpm/next@12.3.4_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/next-server.js:741:37)
+    at async Router.execute (/app/node_modules/.pnpm/next@12.3.4_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/router.js:252:36)
+    at async NextNodeServer.run (/app/node_modules/.pnpm/next@12.3.4_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/base-server.js:365:29)
+    at async NextNodeServer.handleRequest (/app/node_modules/.pnpm/next@12.3.4_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/base-server.js:303:20)
+    at async Server.<anonymous> (/app/server.js:19:5)
+[2024-12-08T22:13:59.908Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: getaddrinfo ENOTFOUND dockerproxy
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:107:26) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'dockerproxy'
+}
+[2024-12-08T22:14:10.341Z] error: <dockerStatusService> TypeError: Cannot read properties of null (reading 'conn')
+    at handler (/app/.next/server/pages/api/docker/status/[...service].js:89:86)
+    at Object.apiResolver (/app/node_modules/.pnpm/next@12.3.4_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/api-utils/node.js:366:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async NextNodeServer.runApi (/app/node_modules/.pnpm/next@12.3.4_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/next-server.js:481:9)
+    at async Object.fn (/app/node_modules/.pnpm/next@12.3.4_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/next-server.js:741:37)
+    at async Router.execute (/app/node_modules/.pnpm/next@12.3.4_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/router.js:252:36)
+    at async NextNodeServer.run (/app/node_modules/.pnpm/next@12.3.4_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/base-server.js:365:29)
+    at async NextNodeServer.handleRequest (/app/node_modules/.pnpm/next@12.3.4_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/dist/server/base-server.js:303:20)
+    at async Server.<anonymous> (/app/server.js:19:5)
+[2024-12-08T22:14:10.384Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: getaddrinfo ENOTFOUND dockerproxy
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:107:26) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'dockerproxy'
+}
+[2024-12-08T22:14:10.482Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: getaddrinfo ENOTFOUND dockerproxy
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:107:26) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'dockerproxy'
+}
+[2024-12-08T22:14:11.570Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: getaddrinfo ENOTFOUND dockerproxy
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:107:26) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'dockerproxy'
+}
+[2024-12-08T22:14:11.663Z] error: <dockerStatusService> Error: connect ENOENT /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16)
+[2024-12-08T22:14:19.880Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: getaddrinfo ENOTFOUND dockerproxy
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:107:26) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'dockerproxy'
+}
+[2024-12-08T22:14:19.973Z] error: <dockerStatusService> Error: connect ENOENT /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16)
+[2024-12-08T22:14:19.988Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: getaddrinfo ENOTFOUND dockerproxy
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:107:26) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'dockerproxy'
+}
+[2024-12-08T22:14:20.859Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: getaddrinfo ENOTFOUND dockerproxy
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:107:26) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'dockerproxy'
+}
+[2024-12-08T22:14:20.913Z] error: <dockerStatusService> Error: connect ENOENT /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16)
+[2024-12-08T22:14:46.337Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: getaddrinfo ENOTFOUND dockerproxy
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:107:26) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'dockerproxy'
+}
+[2024-12-08T22:14:46.415Z] error: <dockerStatusService> Error: connect ENOENT /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16)
+[2024-12-08T22:14:46.520Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: getaddrinfo ENOTFOUND dockerproxy
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:107:26) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'dockerproxy'
+}
+[2024-12-08T22:14:47.503Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: getaddrinfo ENOTFOUND dockerproxy
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:107:26) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'dockerproxy'
+}
+[2024-12-08T22:14:47.511Z] error: <dockerStatusService> Error: connect ENOENT /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16)
+[2024-12-08T22:14:54.738Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: getaddrinfo ENOTFOUND dockerproxy
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:107:26) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'dockerproxy'
+}
+[2024-12-08T22:14:54.836Z] error: <dockerStatusService> Error: connect ENOENT /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16)
+[2024-12-08T22:14:54.850Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: getaddrinfo ENOTFOUND dockerproxy
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:107:26) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'dockerproxy'
+}
+[2024-12-08T22:14:55.907Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: getaddrinfo ENOTFOUND dockerproxy
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:107:26) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'dockerproxy'
+}
+[2024-12-08T22:14:55.917Z] error: <dockerStatusService> Error: connect ENOENT /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16)
+[2024-12-08T22:14:55.920Z] error: <dockerStatusService> Error: connect ENOENT /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16)
+[2024-12-08T22:15:07.211Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: getaddrinfo ENOTFOUND dockerproxy
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:107:26) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'dockerproxy'
+}
+[2024-12-08T22:15:07.305Z] error: <dockerStatusService> Error: connect ENOENT /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16)
+[2024-12-08T22:15:07.323Z] error: <dockerStatusService> Error: connect ENOENT /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16)
+[2024-12-08T22:15:07.433Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: getaddrinfo ENOTFOUND dockerproxy
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:107:26) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'dockerproxy'
+}
+[2024-12-08T22:15:08.275Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: getaddrinfo ENOTFOUND dockerproxy
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:107:26) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'dockerproxy'
+}
+[2024-12-08T22:15:08.331Z] error: <dockerStatusService> Error: connect ENOENT /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16)
+[2024-12-08T22:15:08.334Z] error: <dockerStatusService> Error: connect ENOENT /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16)
+[2024-12-08T22:15:15.166Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: getaddrinfo ENOTFOUND dockerproxy
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:107:26) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'dockerproxy'
+}
+[2024-12-08T22:15:15.218Z] error: <dockerStatusService> Error: connect ENOENT /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16)
+[2024-12-08T22:15:15.258Z] error: <dockerStatusService> Error: connect ENOENT /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16)
+[2024-12-08T22:15:15.274Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: getaddrinfo ENOTFOUND dockerproxy
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:107:26) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'dockerproxy'
+}
+[2024-12-08T22:15:16.050Z] error: <dockerStatusService> Error: connect ENOENT /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16)
+[2024-12-08T22:15:16.060Z] error: <dockerStatusService> Error: connect ENOENT /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16)
+[2024-12-08T22:15:16.067Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: getaddrinfo ENOTFOUND dockerproxy
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:107:26) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'dockerproxy'
+}
+[2024-12-08T22:15:38.146Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: getaddrinfo ENOTFOUND dockerproxy
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:107:26) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'dockerproxy'
+}
+[2024-12-08T22:15:38.234Z] error: <dockerStatusService> Error: connect ENOENT /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16)
+[2024-12-08T22:15:38.251Z] error: <dockerStatusService> Error: connect ENOENT /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16)
+[2024-12-08T22:16:40.675Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: getaddrinfo ENOTFOUND dockerproxy
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:107:26) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'dockerproxy'
+}
+[2024-12-08T22:16:40.752Z] error: <dockerStatusService> Error: connect ENOENT /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16)
+[2024-12-08T22:16:40.767Z] error: <dockerStatusService> Error: connect ENOENT /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16)
+[2024-12-08T22:16:40.783Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: getaddrinfo ENOTFOUND dockerproxy
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:107:26) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'dockerproxy'
+}
+[2024-12-08T22:16:42.446Z] error: <dockerStatusService> Error: connect ENOENT /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16)
+[2024-12-08T22:16:42.488Z] error: <dockerStatusService> Error: connect ENOENT /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16)
+[2024-12-08T22:16:42.566Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: getaddrinfo ENOTFOUND dockerproxy
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:107:26) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'dockerproxy'
+}
+[2024-12-08T22:16:44.586Z] error: <httpProxy> Error calling http://pi.hole.or.ip/api/auth...
+[2024-12-08T22:16:44.599Z] error: undefined
+[2024-12-08T22:16:44.596Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND pi.hole.or.ip
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'pi.hole.or.ip'
+  }
+]
+[2024-12-08T22:16:54.746Z] error: <httpProxy> Error calling http://pi.hole.or.ip/api/auth...
+[2024-12-08T22:16:54.751Z] error: undefined
+[2024-12-08T22:16:54.749Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND pi.hole.or.ip
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'pi.hole.or.ip'
+  }
+]
+[2024-12-08T22:17:09.900Z] error: <httpProxy> Error calling http://pi.hole.or.ip/api/auth...
+[2024-12-08T22:17:09.912Z] error: undefined
+[2024-12-08T22:17:09.906Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND pi.hole.or.ip
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'pi.hole.or.ip'
+  }
+]
+[2024-12-08T22:17:24.483Z] error: undefined
+[2024-12-08T22:17:24.511Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: getaddrinfo ENOTFOUND dockerproxy
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:107:26) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'dockerproxy'
+}
+[2024-12-08T22:17:24.588Z] error: <dockerStatusService> Error: connect ENOENT /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16)
+[2024-12-08T22:17:24.595Z] error: <dockerStatusService> Error: connect ENOENT /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16)
+[2024-12-08T22:17:24.661Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: getaddrinfo ENOTFOUND dockerproxy
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:107:26) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'dockerproxy'
+}
+[2024-12-08T22:17:25.423Z] error: undefined
+[2024-12-08T22:17:25.529Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: getaddrinfo ENOTFOUND dockerproxy
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:107:26) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'dockerproxy'
+}
+[2024-12-08T22:17:25.583Z] error: <dockerStatusService> Error: connect ENOENT /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16)
+[2024-12-08T22:17:25.592Z] error: <dockerStatusService> Error: connect ENOENT /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16)
+[2024-12-08T22:17:36.506Z] error: undefined
+[2024-12-08T22:17:36.644Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: getaddrinfo ENOTFOUND dockerproxy
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:107:26) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'dockerproxy'
+}
+[2024-12-08T22:17:36.741Z] error: <dockerStatusService> Error: connect ENOENT /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16)
+[2024-12-08T22:17:36.761Z] error: <dockerStatusService> Error: connect ENOENT /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16)
+[2024-12-08T22:17:36.776Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: getaddrinfo ENOTFOUND dockerproxy
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:107:26) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'dockerproxy'
+}
+[2024-12-08T22:17:38.215Z] error: undefined
+[2024-12-08T22:17:38.333Z] error: <dockerStatusService> Error: connect ENOENT /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16)
+[2024-12-08T22:17:38.339Z] error: <dockerStatusService> Error: connect ENOENT /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16)
+[2024-12-08T22:17:38.356Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: getaddrinfo ENOTFOUND dockerproxy
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:107:26) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'dockerproxy'
+}
+[2024-12-08T22:18:01.066Z] error: undefined
+[2024-12-08T22:18:01.092Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: getaddrinfo ENOTFOUND dockerproxy
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:107:26) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'dockerproxy'
+}
+[2024-12-08T22:18:01.156Z] error: <dockerStatusService> Error: connect ENOENT /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16)
+[2024-12-08T22:18:01.169Z] error: <dockerStatusService> Error: connect ENOENT /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16)
+[2024-12-08T22:18:06.465Z] error: undefined
+[2024-12-08T22:19:09.516Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: getaddrinfo ENOTFOUND dockerproxy
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:107:26) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'dockerproxy'
+}
+[2024-12-08T22:19:09.527Z] error: undefined
+[2024-12-08T22:19:09.645Z] error: <dockerStatusService> Error: connect ENOENT /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16)
+[2024-12-08T22:19:09.649Z] error: <dockerStatusService> Error: connect ENOENT /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16)
+[2024-12-08T22:19:15.609Z] error: undefined
+[2024-12-08T22:23:16.314Z] error: undefined
+[2024-12-08T22:23:16.346Z] error: <service-helpers> Error getting services from Docker server 'my-docker': Error: getaddrinfo ENOTFOUND dockerproxy
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:107:26) {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'dockerproxy'
+}
+[2024-12-08T22:23:16.560Z] error: <dockerStatusService> Error: connect ENOENT /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16)
+[2024-12-08T22:23:16.567Z] error: <dockerStatusService> Error: connect ENOENT /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16)
+[2024-12-08T22:23:22.029Z] error: undefined
+[2024-12-08T23:04:10.927Z] error: undefined
+[2024-12-08T23:04:10.996Z] error: <dockerStatusService> Error: connect ENOENT /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16)
+[2024-12-08T23:04:10.999Z] error: <dockerStatusService> Error: connect ENOENT /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16)
+[2024-12-08T23:04:11.946Z] error: undefined
+[2024-12-08T23:04:12.025Z] error: <dockerStatusService> Error: connect ENOENT /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16)
+[2024-12-08T23:04:12.029Z] error: <dockerStatusService> Error: connect ENOENT /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16)
+[2024-12-08T23:04:17.056Z] error: undefined
+[2024-12-08T23:04:29.850Z] error: undefined
+[2024-12-08T23:04:29.904Z] error: <dockerStatusService> Error: connect ENOENT /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16)
+[2024-12-08T23:04:29.924Z] error: <dockerStatusService> Error: connect ENOENT /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16)
+[2024-12-08T23:04:30.663Z] error: undefined
+[2024-12-08T23:04:30.712Z] error: <dockerStatusService> Error: connect ENOENT /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16)
+[2024-12-08T23:04:30.716Z] error: <dockerStatusService> Error: connect ENOENT /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16)
+[2024-12-08T23:04:35.997Z] error: undefined
+[2024-12-08T23:04:38.750Z] error: undefined
+[2024-12-08T23:04:38.808Z] error: <dockerStatusService> Error: connect ENOENT /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16)
+[2024-12-08T23:04:38.812Z] error: <dockerStatusService> Error: connect ENOENT /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16)
+[2024-12-08T23:04:48.375Z] error: undefined
+[2024-12-08T23:04:48.423Z] error: <dockerStatusService> Error: connect ENOENT /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16)
+[2024-12-08T23:04:48.427Z] error: <dockerStatusService> Error: connect ENOENT /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16)
+[2024-12-08T23:04:48.810Z] error: undefined
+[2024-12-08T23:04:53.515Z] error: undefined
+[2024-12-08T23:04:59.424Z] error: undefined
+[2024-12-08T23:05:08.494Z] error: <dockerStatusService> Error: connect ENOENT /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16)
+[2024-12-08T23:05:08.498Z] error: <dockerStatusService> Error: connect ENOENT /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16)
+[2024-12-08T23:05:09.350Z] error: <dockerStatusService> Error: connect ENOENT /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16)
+[2024-12-08T23:05:09.354Z] error: <dockerStatusService> Error: connect ENOENT /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16)
+[2024-12-08T23:16:29.235Z] error: <dockerStatusService> Error: connect ENOENT /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16)
+[2024-12-08T23:16:29.243Z] error: <dockerStatusService> Error: connect ENOENT /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16)
+[2024-12-08T23:16:46.678Z] error: <dockerStatusService> Error: connect ENOENT /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16)
+[2024-12-08T23:16:46.705Z] error: <dockerStatusService> Error: connect ENOENT /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16)
+[2024-12-08T23:17:39.695Z] error: <dockerStatusService> Error: connect ENOENT /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16)
+[2024-12-08T23:17:39.701Z] error: <dockerStatusService> Error: connect ENOENT /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16)
+[2024-12-08T23:17:40.680Z] error: <dockerStatusService> Error: connect ENOENT /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16)
+[2024-12-08T23:17:49.642Z] error: <dockerStatusService> Error: connect ENOENT /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16)
+[2024-12-08T23:17:58.345Z] error: <dockerStatusService> Error: connect ENOENT /var/run/docker.sock
+    at PipeConnectWrap.afterConnect [as oncomplete] (node:net:1555:16)
+[2024-12-08T23:19:49.797Z] error: undefined
+[2024-12-08T23:19:55.132Z] error: undefined
+[2024-12-08T23:20:38.415Z] error: <httpProxy> Error calling http://pi.hole.or.ip/admin/api.php...
+[2024-12-08T23:20:38.421Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND pi.hole.or.ip
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'pi.hole.or.ip'
+  }
+]
+[2024-12-08T23:20:39.390Z] error: <httpProxy> Error calling http://pi.hole.or.ip/admin/api.php...
+[2024-12-08T23:20:39.392Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND pi.hole.or.ip
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'pi.hole.or.ip'
+  }
+]
+[2024-12-08T23:20:58.952Z] error: <httpProxy> Error calling http://pi.hole.or.ip/admin/api.php...
+[2024-12-08T23:20:58.955Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND pi.hole.or.ip
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'pi.hole.or.ip'
+  }
+]
+[2024-12-08T23:22:16.353Z] error: <httpProxy> Error calling http://pi.hole.or.ip/admin/api.php...
+[2024-12-08T23:22:16.357Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND pi.hole.or.ip
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'pi.hole.or.ip'
+  }
+]
+[2024-12-08T23:24:24.117Z] error: <httpProxy> Error calling http://pi.hole.or.ip/admin/api.php...
+[2024-12-08T23:24:24.119Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND pi.hole.or.ip
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'pi.hole.or.ip'
+  }
+]
+[2024-12-08T23:24:27.393Z] error: <httpProxy> Error calling http://pi.hole.or.ip/admin/api.php...
+[2024-12-08T23:24:27.395Z] error: <httpProxy> [
+  500,
+  Error: getaddrinfo ENOTFOUND pi.hole.or.ip
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:118:26) {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'pi.hole.or.ip'
+  }
+]
+[2024-12-11T13:57:24.287Z] error: <credentialedProxyHandler> HTTP Error 401 calling https://api.tailscale.com/api/v2/device/deviceid
+[2024-12-11T13:58:10.883Z] error: <credentialedProxyHandler> HTTP Error 401 calling https://api.tailscale.com/api/v2/device/deviceid
+[2024-12-11T13:58:34.249Z] error: <credentialedProxyHandler> HTTP Error 401 calling https://api.tailscale.com/api/v2/device/100.125.193.82
+[2024-12-11T13:59:19.820Z] error: <credentialedProxyHandler> HTTP Error 401 calling https://api.tailscale.com/api/v2/device/100.125.193.82
+[2024-12-11T14:00:47.674Z] error: <credentialedProxyHandler> HTTP Error 401 calling https://api.tailscale.com/api/v2/device/nbZqsZH8T611CNTRL

@@ -1,0 +1,14 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/configs/services
+
+- Network:
+    - Pihole:
+        icon: pi-hole.png
+        description: This is my service
+        server: my-docker
+        container: pihole
+        widget:
+            type: pihole
+            url: http://192.168.101.20:8080
+            key: $PIHOLE_APIKEY
