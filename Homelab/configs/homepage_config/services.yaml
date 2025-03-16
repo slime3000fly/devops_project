@@ -11,4 +11,4 @@
         widget:
             type: pihole
             url: http://192.168.101.20:8080
-            key: $PIHOLE_APIKEY
+            key: {{HOMEPAGE_VAR_PIHOLE_APIKEY}}
