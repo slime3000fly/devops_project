@@ -1,6 +1,6 @@
 # Create a new user and set a password
 $Username = "sshadmin"  # Username for the new user
-$Password = ConvertTo-SecureString "SuperTajneHaslo" -AsPlainText -Force  # Secure password for the user (stored securely)
+$Password = ConvertTo-SecureString "SuperTajeHaslo" -AsPlainText -Force  # Secure password for the user (stored securely)
 New-LocalUser -Name $Username -Password $Password -FullName "SSH Admin" -Description "Account for SSH access"  # Create a new local user
 
 # Retrieve the administrator group name dynamically
@@ -48,3 +48,6 @@ Set-Item WSMan:\localhost\Client\TrustedHosts -Value "localhost" -Force
 
 # Test WinRM connection to the remote system
 Test-WsMan -ComputerName $hostname -Credential $credentials -Authentication Default # Test the WinRM connection using provided credentials
+
+# set powerhshell path
+[System.Environment]::SetEnvironmentVariable('PATH', $env:PATH + ';C:\Windows\System32\WindowsPowerShell\v1.0', [System.EnvironmentVariableTarget]::Machine) 
