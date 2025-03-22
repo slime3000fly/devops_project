@@ -18,9 +18,11 @@ Set-Service -Name winrm -StartupType Automatic  # Configure WinRM to start autom
 Enable-PSRemoting -Force  # Enables WinRM on the local computer, configures necessary firewall rules and services
 
 # Configure firewall rules to allow WinRM connections
-Set-NetFirewallRule -Name WINRM-HTTP-In-TCP-PUBLIC -RemoteAddress Any  # Firewall rule for WinRM connections over public networks
-Set-NetFirewallRule -Name WINRM-HTTP-In-TCP-Domain -RemoteAddress Any  # Firewall rule for WinRM connections within the domain
+New-NetFirewallRule -DisplayName "WinRM Public" -Name "WinRM-HTTP-In-TCP-PUBLIC" -Enabled True -Direction Inbound -Protocol TCP -LocalPort 5985 -Action Allow
+New-NetFirewallRule -DisplayName "WinRM Domain" -Name "WinRM-HTTP-In-TCP-Domain" -Enabled True -Direction Inbound -Protocol TCP -LocalPort 5985 -Action Allow
 
+# Add WinRM to env path... Windows :)
+$env:PATH += ";C:\Windows\System32" 
 # Check if WinRM service is running. If not, start it.
 if ((Get-Service winrm).Status -ne 'Running') {
     Start-Service winrm  # Start WinRM service if it's not running
@@ -30,13 +32,19 @@ if ((Get-Service winrm).Status -ne 'Running') {
 winrm quickconfig  # Check if WinRM is correctly configured on the system
 
 # Check WinRM connection to a remote user
-$hostname = "192.168.56.1"  # IP address or hostname of the remote system
-$username = "nazwa_uzytkownika"  # Replace with the username to test connection
-$password = "haslo"  # Replace with the password to test connection
+$hostname = "localhost"  # IP address or hostname of the remote system
+
+# Turn on Basic authentiaction
+winrm set winrm/config/client/auth '@{Basic="true"}'
+winrm set winrm/config/service/auth '@{Basic="true"}'
 
 # Create credentials for testing the connection
-$securePassword = ConvertTo-SecureString $password -AsPlainText -Force  # Create a secure password object
-$credentials = New-Object System.Management.Automation.PSCredential ($username, $securePassword)  # Create credentials object
+$securePassword = ConvertTo-SecureString $Password -AsPlainText -Force  # Create a secure password object
+$credentials = New-Object System.Management.Automation.PSCredential ($Username, $securePassword)  # Create credentials object
+
+# Add trusted host
+Set-Item WSMan:\localhost\Client\TrustedHosts -Value "192.168.101.20" -Force
+Set-Item WSMan:\localhost\Client\TrustedHosts -Value "localhost" -Force
 
 # Test WinRM connection to the remote system
-Test-WsMan -ComputerName $hostname -Credential $credentials  # Test the WinRM connection using provided credentials
+Test-WsMan -ComputerName $hostname -Credential $credentials -Authentication Default # Test the WinRM connection using provided credentials

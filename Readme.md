@@ -1,39 +1,44 @@
-# README for WinRM Setup Script (EXE Version) - Administrator Privileges Required
+# Project README: Environment Configuration for Internet Sites
 
-This executable file is a compiled version of the original PowerShell script designed to automate the configuration of WinRM (Windows Remote Management) on a Windows machine. The goal of this executable is to simplify the setup process so that a user only needs to run a single `.exe` file to configure everything needed for remote access through WinRM. Note that this executable must be run as an administrator.
+## Table of Contents
 
-## Prerequisites
+1. [Project Description](#project-description)
+2. [CI/CD](#cicd)
+4. [Folder list](#folder-list)
+5. [Installation and Configuration Vagrant](#installation-and-configuration-Vagrant)
 
-   - **Administrator privileges:** The executable requires administrator rights to configure WinRM, create users, and modify firewall settings.
-   - **Windows operating system:** This executable is designed for Windows environments.
+## Project Description
+The "DevOps Project" repository serves as a comprehensive collection of configurations and setups for various DevOps tools and environments. It encompasses configurations for Google Compute Engine (GCE), Google Kubernetes Engine (GKE), as well as Vagrant setups etc.
 
-## Features of the Executable
+## CI/CD
+CI/CD pipelines have been set up using GitHub Actions. Any change in the repository triggers the pipeline to start, resulting in the creation of a new Docker image that is then published to Docker Hub
 
-   - **Create a New User:** A new local user (by default `sshadmin`) will be created. The password for this user has been set to `SuperTajneHaslo`. This user will be used for remote access via WinRM.
+## Folder list
+1. [GoogleCloud](GoogleCloud/README.md)
+3. [Vagrant](##installation-and-Configuration-Vagrant)
+4. [K8S](K8S/README.md)
+5. [DockerCompose](DockerCompose/README.md)
+6. [PiHole](Pi-hole/README.md)
 
-   - **Add User to Administrator Group:** The new user is automatically added to the local Administrators group to ensure they have full system access.
+## Folders
+### Installation and Configuration Vagrant
+#### To run this configuration you must have ansible, vagrant installed
 
-   - **Configure WinRM:** The executable enables and configures Windows Remote Management (WinRM) for remote management of the machine.
+1. Clone this project to your local machine:
+   ```shell
+   git clone
+2. Navigate to folder with setup.
+     ```shell
+    cd Vagrant/infra
+4. Type command
+     ```shell
+    vagrant up
+5. Connect to the page
+   ```shell
+    http://VirtualMachine_IP_address:8080
 
-   - **Set WinRM Service to Start Automatically:** The WinRM service is configured to start automatically with the system.
 
-   - **Configure Firewall Rules for WinRM:** Firewall rules are set to allow inbound TCP connections on ports 5985 (HTTP) and 5986 (HTTPS) for WinRM, ensuring that the system can accept remote management connections.
-
-   - **Test WinRM Connection:** The executable will attempt to test the WinRM connection using the provided credentials to ensure the configuration is correct.
-
-   - **Ready for Ansible Automation:** Once configured, the machine will be ready to accept commands from Ansible via WinRM for seamless automation.
-
-## How to Use
-
-1. **Run the EXE as Administrator:**
-   Right-click the `.exe` file and select **Run as administrator**. This is necessary to grant the executable the required system-level permissions.
-
-2. **Wait for the Setup to Complete:** 
-   The executable will configure WinRM, create the necessary user, modify firewall rules, and start the relevant services.
-
-3. **Test the WinRM Connection:**
-   Once the executable completes, you can test the connection to the machine using the WinRM credentials. This setup allows remote management via WinRM.
-
----
-
-By following these steps, you can easily configure WinRM on your Windows machine and begin using it for automation with tools like Ansible. This setup ensures your system is ready for remote management and automation.
+If you want to see metric go to:
+   ```shell
+    http://VirtualMachine_IP_address:3000
+   ```
