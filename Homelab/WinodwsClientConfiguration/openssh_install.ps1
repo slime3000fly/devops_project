@@ -1,48 +1,42 @@
-# 1. Install OpenSSH Client and Server
-Add-WindowsCapability -Online -Name OpenSSH.Client~~~~0.0.1.0
-Add-WindowsCapability -Online -Name OpenSSH.Server~~~~0.0.1.0
-$sshState = Get-WindowsCapability -Online | Where-Object Name -like 'OpenSSH*'
+# Create a new user and set a password
+$Username = "sshadmin"  # Username for the new user
+$Password = ConvertTo-SecureString "SuperTajneHaslo" -AsPlainText -Force  # Secure password for the user (stored securely)
+New-LocalUser -Name $Username -Password $Password -FullName "SSH Admin" -Description "Account for SSH access"  # Create a new local user
 
-if ($sshState.State -eq "Installed") {
-    Write-Output "OpenSSH Client is installed."
-} else {
-    Write-Output "Error occurred during installation."
+# Retrieve the administrator group name dynamically
+$adminGroup = New-Object System.Security.Principal.SecurityIdentifier("S-1-5-32-544")  # SID of the administrators group
+$adminGroupName = $adminGroup.Translate([System.Security.Principal.NTAccount]).Value -replace "^.*\\"  # Convert SID to the group name
+Write-Output "Adding user to the administrator group: $adminGroupName"  # Output the group name the user will be added to
+
+# Add the user to the administrator group
+Add-LocalGroupMember -Group $adminGroupName -Member $Username  # Add the new user to the administrators group
+
+# Set WinRM service to start automatically with the system
+Set-Service -Name winrm -StartupType Automatic  # Configure WinRM to start automatically with the system
+
+# Check if WinRM is enabled and enable it if necessary
+Enable-PSRemoting -Force  # Enables WinRM on the local computer, configures necessary firewall rules and services
+
+# Configure firewall rules to allow WinRM connections
+Set-NetFirewallRule -Name WINRM-HTTP-In-TCP-PUBLIC -RemoteAddress Any  # Firewall rule for WinRM connections over public networks
+Set-NetFirewallRule -Name WINRM-HTTP-In-TCP-Domain -RemoteAddress Any  # Firewall rule for WinRM connections within the domain
+
+# Check if WinRM service is running. If not, start it.
+if ((Get-Service winrm).Status -ne 'Running') {
+    Start-Service winrm  # Start WinRM service if it's not running
 }
 
-# 2. Create a new user and set a password
-$Username = "sshadmin"
-$Password = ConvertTo-SecureString "SuperTajneHaslo" -AsPlainText -Force
-New-LocalUser -Name $Username -Password $Password -FullName "SSH Admin" -Description "Account for SSH access"
+# Check the WinRM configuration
+winrm quickconfig  # Check if WinRM is correctly configured on the system
 
-# 3. Retrieve the administrator group name dynamically
-$adminGroup = New-Object System.Security.Principal.SecurityIdentifier("S-1-5-32-544")
-$adminGroupName = $adminGroup.Translate([System.Security.Principal.NTAccount]).Value -replace "^.*\\"
-Write-Output "Adding user to the administrator group: $adminGroupName"
+# Check WinRM connection to a remote user
+$hostname = "192.168.56.1"  # IP address or hostname of the remote system
+$username = "nazwa_uzytkownika"  # Replace with the username to test connection
+$password = "haslo"  # Replace with the password to test connection
 
-# 4. Add the user to the administrator group
-Add-LocalGroupMember -Group $adminGroupName -Member $Username
+# Create credentials for testing the connection
+$securePassword = ConvertTo-SecureString $password -AsPlainText -Force  # Create a secure password object
+$credentials = New-Object System.Management.Automation.PSCredential ($username, $securePassword)  # Create credentials object
 
-# 5. Start and configure the SSH service
-Start-Service sshd
-Set-Service -Name sshd -StartupType 'Automatic'
-
-# 6. Configure the firewall rule for SSH
-if (!(Get-NetFirewallRule -Name "OpenSSH-Server-In-TCP" -ErrorAction SilentlyContinue | Select-Object Name, Enabled)) {
-    Write-Output "Firewall rule 'OpenSSH-Server-In-TCP' does not exist, creating it..."
-    New-NetFirewallRule -Name 'OpenSSH-Server-In-TCP' -DisplayName 'OpenSSH Server (sshd)' -Enabled True -Direction Inbound -Protocol TCP -Action Allow -LocalPort 22
-} else {
-    Write-Output "Firewall rule 'OpenSSH-Server-In-TCP' already exists."
-}
-
-# 7. Ensure port 22 is open in the firewall
-New-NetFirewallRule -Name "OpenSSH" -DisplayName "OpenSSH Server" -Enabled True -Direction Inbound -Protocol TCP -Action Allow -LocalPort 22
-
-# 8. Retrieve the local IP address
-$localIP = (Get-NetIPAddress | Where-Object AddressFamily -eq 'IPv4' | Where-Object InterfaceAlias -NotLike '*Loopback*' | Select-Object -ExpandProperty IPAddress)[0]
-
-# 9. Display connection information
-Write-Output "User $Username has been created and added to the $adminGroupName group."
-Write-Output "SSH is enabled. You can connect using: ssh $Username@$localIP"
-
-# 10. Wait for user input before exiting
-Read-Host -Prompt "Press Enter to exit"
+# Test WinRM connection to the remote system
+Test-WsMan -ComputerName $hostname -Credential $credentials  # Test the WinRM connection using provided credentials
