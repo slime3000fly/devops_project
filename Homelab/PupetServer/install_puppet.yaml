@@ -1,0 +1,63 @@
+---
+- name: Install pupet server
+  hosts: all
+  remote_user: ubuntu
+  become: yes
+
+  tasks:
+  - name: add pupet repository
+    ansible.builtin.get_url:
+      url: https://apt.puppet.com/puppet8-release-bionic.deb
+      dest: /tmp/puppet-release-bionic.deb
+
+  - name: Install Puppet repository package
+    ansible.builtin.apt:
+      deb: /tmp/puppet-release-bionic.deb
+  
+  - name: apt update
+    ansible.builtin.apt:
+      update_cache: yes
+  
+  - name: apt upgrade
+    ansible.builtin.apt:
+      upgrade: dist
+    
+  - name: Install puppetserver package
+    ansible.builtin.apt:
+      name: puppetserver
+      state: present
+
+  - name: Create 2GB swap file
+    ansible.builtin.command: fallocate -l 5G /swapfile
+    args:
+      creates: /swapfile
+
+  - name: Set permissions on swap file
+    ansible.builtin.file:
+      path: /swapfile
+      owner: root
+      group: root
+      mode: '0600'
+
+  - name: Format swap file
+    ansible.builtin.command: mkswap /swapfile
+    when: ansible_swaptotal_mb == 0
+
+  - name: Enable swap file
+    ansible.builtin.command: swapon /swapfile
+    when: ansible_swaptotal_mb == 0
+
+  - name: Ensure swap is permanent in /etc/fstab
+    ansible.builtin.lineinfile:
+      path: /etc/fstab
+      line: '/swapfile none swap sw 0 0'
+      state: present
+
+  - name: Enable Puppet Server service
+    ansible.builtin.systemd:
+      name: puppetserver
+      enabled: yes
+      state: started
+
+  - name: Reboot the server
+    ansible.builtin.reboot:
