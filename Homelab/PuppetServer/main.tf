@@ -102,16 +102,6 @@ resource "oci_core_security_list" "PuppetSecurityList" {
     }
   }
 
-  # Ingress – ICMP: Ping
-  ingress_security_rules {
-    protocol = "1"
-    source   = "0.0.0.0/0"
-    icmp_options {
-      type = 8
-      code = 0
-    }
-  }
-
   # Ingress – ICMP: Fragmentation Needed
   ingress_security_rules {
     protocol = "1"

@@ -18,8 +18,7 @@ Set-Service -Name winrm -StartupType Automatic  # Configure WinRM to start autom
 Enable-PSRemoting -Force  # Enables WinRM on the local computer, configures necessary firewall rules and services
 
 # Configure firewall rules to allow WinRM connections
-New-NetFirewallRule -DisplayName "WinRM Public" -Name "WinRM-HTTP-In-TCP-PUBLIC" -Enabled True -Direction Inbound -Protocol TCP -LocalPort 5985 -Action Allow
-New-NetFirewallRule -DisplayName "WinRM Domain" -Name "WinRM-HTTP-In-TCP-Domain" -Enabled True -Direction Inbound -Protocol TCP -LocalPort 5985 -Action Allow
+New-NetFirewallRule -DisplayName "WinRM Public" -Name "WinRM-HTTP-In-TCP-PUBLIC" -Enabled True -Direction Inbound -Protocol TCP -LocalPort 5986 -Action Allow
 
 # Add WinRM to env path... Windows :)
 $env:PATH += ";C:\Windows\System32" 
@@ -27,9 +26,6 @@ $env:PATH += ";C:\Windows\System32"
 if ((Get-Service winrm).Status -ne 'Running') {
     Start-Service winrm  # Start WinRM service if it's not running
 }
-
-# Check the WinRM configuration
-winrm quickconfig  # Check if WinRM is correctly configured on the system
 
 # Check WinRM connection to a remote user
 $hostname = "localhost"  # IP address or hostname of the remote system
