@@ -4,10 +4,11 @@
   gather_facts: yes
   vars:
     puppet_agent_url: "https://downloads.puppet.com/windows/puppet8/puppet-agent-x64-latest.msi"
+    ### -------------------------------------------------------------------------------------------------------------
     puppet_server_ip: "141.147.49.65"  # !!!!!CHANGE!!!!!
+    ### -------------------------------------------------------------------------------------------------------------
 
   tasks:
-
     - name: Download Puppet Agent MSI
       win_get_url:
         url: "{{ puppet_agent_url }}"

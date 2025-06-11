@@ -37,3 +37,8 @@ This executable file is a compiled version of the original PowerShell (used: ) s
 ---
 
 By following these steps, you can easily configure WinRM on your Windows machine and begin using it for automation with tools like Ansible. This setup ensures your system is ready for remote management and automation.
+
+# Command to turn powershell script to exe
+```
+Invoke-ps2exe .\windows_preperation.ps1 .\windows_preperation.exe
+```

@@ -4,6 +4,9 @@
   remote_user: ubuntu
   become: yes
 
+  roles:
+    - basic_setup
+
   tasks:
   - name: add pupet repository
     ansible.builtin.get_url:
@@ -17,41 +20,20 @@
   - name: apt update
     ansible.builtin.apt:
       update_cache: yes
-  
-  - name: apt upgrade
-    ansible.builtin.apt:
-      upgrade: dist
     
   - name: Install puppetserver package
     ansible.builtin.apt:
       name: puppetserver
       state: present
 
-  - name: Create 2GB swap file
-    ansible.builtin.command: fallocate -l 5G /swapfile
-    args:
-      creates: /swapfile
-
-  - name: Set permissions on swap file
-    ansible.builtin.file:
-      path: /swapfile
+  - name: Copy puppetserver config directory
+    ansible.builtin.copy:
+      src: "{{ playbook_dir }}/../configs/puppetserver_config/puppetserver/"
+      dest: /etc/puppetlabs/puppetserver/
       owner: root
       group: root
-      mode: '0600'
-
-  - name: Format swap file
-    ansible.builtin.command: mkswap /swapfile
-    when: ansible_swaptotal_mb == 0
-
-  - name: Enable swap file
-    ansible.builtin.command: swapon /swapfile
-    when: ansible_swaptotal_mb == 0
-
-  - name: Ensure swap is permanent in /etc/fstab
-    ansible.builtin.lineinfile:
-      path: /etc/fstab
-      line: '/swapfile none swap sw 0 0'
-      state: present
+      mode: '0644'
+      recurse: yes
 
   - name: Enable Puppet Server service
     ansible.builtin.systemd:

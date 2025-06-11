@@ -1,0 +1,49 @@
+---
+# Role: basic_setup
+# Description: Performs basic system setup (swap + fail2ban + apt updates)
+ 
+  - name: apt update
+    ansible.builtin.apt:
+      update_cache: yes
+  
+  - name: apt upgrade
+    ansible.builtin.apt:
+      upgrade: dist
+
+  - name: Create 5GB swap file
+    ansible.builtin.command: fallocate -l 5G /swapfile
+    args:
+      creates: /swapfile
+
+  - name: Set permissions on swap file
+    ansible.builtin.file:
+      path: /swapfile
+      owner: root
+      group: root
+      mode: '0600'
+
+  - name: Format swap file
+    ansible.builtin.command: mkswap /swapfile
+    when: ansible_swaptotal_mb == 0
+
+  - name: Enable swap file
+    ansible.builtin.command: swapon /swapfile
+    when: ansible_swaptotal_mb == 0
+
+  - name: Ensure swap is permanent in /etc/fstab
+    ansible.builtin.lineinfile:
+      path: /etc/fstab
+      line: '/swapfile none swap sw 0 0'
+      state: present
+
+  - name: Install fail2ban
+    ansible.builtin.apt:
+      name: fail2ban
+      state: present
+      update_cache: yes
+
+  - name: Ensure fail2ban service is enabled and started
+    ansible.builtin.systemd:
+      name: fail2ban
+      enabled: yes
+      state: started
