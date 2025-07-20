@@ -1,7 +1,8 @@
 ---
 - name: Install Puppet Agent 8 on Windows via WinRM
   hosts: windows
-  gather_facts: yes
+  gather_facts: no
+  become_method: enable
   vars:
     puppet_agent_url: "https://downloads.puppet.com/windows/puppet8/puppet-agent-x64-latest.msi"
     ### -------------------------------------------------------------------------------------------------------------
@@ -9,23 +10,29 @@
     ### -------------------------------------------------------------------------------------------------------------
 
   tasks:
-    - name: Download Puppet Agent MSI
-      win_get_url:
-        url: "{{ puppet_agent_url }}"
-        dest: C:\Windows\Temp\puppet-agent.msi
+    # - name: Download Puppet Agent MSI
+    #   win_get_url:
+    #     url: "{{ puppet_agent_url }}"
+    #     dest: C:\puppet-agent.msi
 
-    - name: Install Puppet Agent
-      win_package:
-        path: C:\Windows\Temp\puppet-agent.msi
-        state: present
-        arguments: /qn
-
-    - name: Set puppet server in puppet.conf
+    # - name: Install Puppet Agent
+    #   win_package:
+    #     path: C:\puppet-agent.msi
+    #     state: present
+    #     arguments: /qn
+    # - name: Usuń pierwszą linię, jeśli jest dokładnie "pierwsza linia"
+    #   win_lineinfile:
+    #     path: C:\ProgramData\PuppetLabs\puppet\etc\puppet.conf
+    #     regexp: '^ser'
+    #     state: absent
+  
+    
+    - name: Zmień server=example na server=131
       win_lineinfile:
-        path: 'C:\ProgramData\PuppetLabs\puppet\etc\puppet.conf'
-        section: main
-        create: yes
-        line: "server={{ puppet_server_ip }}"
+        path: C:\ProgramData\PuppetLabs\puppet\etc\puppet.conf
+        regexp: '^ser'
+        line: 'server={{ puppet_server_ip }}'
+        backup: yes
 
     - name: Run puppet agent to request certificate
       win_command: '"C:\Program Files\Puppet Labs\Puppet\bin\puppet.bat" agent --test'

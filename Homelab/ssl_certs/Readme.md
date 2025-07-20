@@ -1,1 +1,0 @@
-This is certifacte for RasbberyPI. This cert is added to every Windows computer in network to be able to mange them by winrm/ssh.

@@ -66,10 +66,10 @@ read -p "Would you like to install Tailscale for VPN? (y/n): " install_tailscale
 #echo -e "\e[34m restart nginx\e[0m"
 #sudo systemctl restart nginx
 # install hasicorp valut
-echo -e "\e[34m hasicorp valut\e[0m"
-wget -O - https://apt.releases.hashicorp.com/gpg | sudo gpg --dearmor -o /usr/share/keyrings/hashicorp-archive-keyring.gpg
-echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
-sudo apt update && sudo apt install vault
+# echo -e "\e[34m hasicorp valut\e[0m"
+# wget -O - https://apt.releases.hashicorp.com/gpg | sudo gpg --dearmor -o /usr/share/keyrings/hashicorp-archive-keyring.gpg
+# echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
+# sudo apt update && sudo apt install vault
 
 # install docker 
 echo -e "\e[34m Docker instalation\e[0m"
@@ -133,7 +133,7 @@ if [[ "$install_tailscale" == "y" ]]; then
     echo -e "\033[0;32mTailscale installed and configured\033[0m"
 fi
 
-mv /configs/DNC.config /etc-pihole/custo.list
+mv /configs/DNC.config /etc-pihole/custom.list
 
 # SSH config
 echo -e "\e[34mSSH configuration to use only rsa key\e[0m"

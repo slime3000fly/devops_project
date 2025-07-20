@@ -21,6 +21,18 @@
     ansible.builtin.apt:
       update_cache: yes
     
+  - name: Allow incoming TCP traffic on port 8140 (Puppet)
+    ansible.builtin.iptables:
+      chain: INPUT
+      protocol: tcp
+      destination_port: 8140
+      jump: ACCEPT
+      state: present
+
+  - name: Save iptables rules (on Ubuntu)
+    ansible.builtin.command: iptables-save
+    register: iptables_rules
+
   - name: Install puppetserver package
     ansible.builtin.apt:
       name: puppetserver

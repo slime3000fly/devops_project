@@ -10,44 +10,19 @@ if (Test-Path $tokenPath) {
     exit 1
 }
 
-# Import root CA certificate to Trusted Root Certification Authorities store
-$rootCAPath = "..\ssl_certs\raspberrypi.crt"
-
-if (Test-Path $rootCAPath) {
-    try {
-        $cert = New-Object System.Security.Cryptography.X509Certificates.X509Certificate2
-        $cert.Import($rootCAPath)
-
-        $store = New-Object System.Security.Cryptography.X509Certificates.X509Store("Root", "LocalMachine")
-        $store.Open("ReadWrite")
-        $store.Add($cert)
-        $store.Close()
-
-        Write-Output "✅ Root CA certificate imported to Trusted Root Certification Authorities store."
-    } catch {
-        Write-Error "❌ Failed to import root CA certificate: $_"
-    }
-} else {
-    Write-Error "❌ Root CA certificate file not found: $rootCAPath"
-}
-
+# Download user password
 # Base URL with query parameters
 $baseUrl = "https://eu.infisical.com/api/v3/secrets/raw"
 $queryParams = @{
     secretPath = "/"
     viewSecretValue = "true"
-    expandSecretReferences = "false"
-    recursive = "false"
-    include_imports = "false"
+    workspaceSlug = "homelab-z7ns"
+    environment = "dev"
 }
+
 
 # Build full URL with query string
 $uri = $baseUrl + "?" + (($queryParams.GetEnumerator() | ForEach-Object { "$($_.Key)=$($_.Value)" }) -join "&")
-
-# HTTP headers
-$headers = @{
-    "Authorization" = "Bearer $serviceToken"
-}
 
 # Secret key to look for
 $secretName = "sshadmin"
@@ -67,55 +42,64 @@ try {
     Write-Error "❌ API error: $_"
 }
 
-# Create a new user and set a password
-$Username = "sshadmin"  # Username for the new user
-$Password = ConvertTo-SecureString $secret.secretValue -AsPlainText -Force  # Secure password for the user (stored securely)
- Sprawdź, czy użytkownik już istnieje
+$Username = "sshadmin"
+$Password = ConvertTo-SecureString $secret.secretValue -AsPlainText -Force
 $existingUser = Get-LocalUser -Name $Username -ErrorAction SilentlyContinue
 
+Write-Host "test: $($secret.secretValue)"
+
 if ($null -eq $existingUser) {
-    Write-Output "✅ user '$Username' doesn't exist – create user."
+    Write-Host "user $Username doesn't exist create user."
     New-LocalUser -Name $Username -Password $Password -FullName "SSH Admin" -Description "Account for SSH access"
+    Start-Sleep -Seconds 2
 } else {
-    Write-Output "ℹ️ user '$Username' exist – update password."
+    Write-Host "user $Username exist update password."
     $existingUser | Set-LocalUser -Password $Password
 }
 
-# check if user is in adminstrator group
+# Get group name for Administrators
 $adminGroup = New-Object System.Security.Principal.SecurityIdentifier("S-1-5-32-544")
 $adminGroupName = $adminGroup.Translate([System.Security.Principal.NTAccount]).Value -replace "^.*\\"
+$computerName = $env:COMPUTERNAME
 
-if (-not (Get-LocalGroupMember -Group $adminGroupName -ErrorAction SilentlyContinue | Where-Object { $_.Name -eq $Username })) {
-    Write-Output "🔒 Dodaję użytkownika '$Username' do grupy $adminGroupName."
-    Add-LocalGroupMember -Group $adminGroupName -Member $Username
+# Check if user is in the group
+$inGroup = Get-LocalGroupMember -Group $adminGroupName -ErrorAction SilentlyContinue |
+    Where-Object { $_.Name -eq "$computerName\$Username" }
+
+if (-not $inGroup) {
+    Write-Host "adding user $Username to group $adminGroupName."
+    try {
+        Add-LocalGroupMember -Group $adminGroupName -Member $Username
+        Write-Host "Successfully added $Username to $adminGroupName."
+    } catch {
+        Write-Error "Failed to add user to group: $_"
+    }
 } else {
-    Write-Output "✅ Użytkownik '$Username' już jest członkiem grupy $adminGroupName."
+    Write-Host "user $Username is already part of the group $adminGroupName."
 }
 
-# Set WinRM service to start automatically with the system
-Set-Service -Name winrm -StartupType Automatic  # Configure WinRM to start automatically with the system
+# 1. Download and install Python 3.13
+$pythonInstallerUrl = "https://www.python.org/ftp/python/3.13.5/python-3.13.5-amd64.exe"
+$pythonInstallerPath = "$env:TEMP\python-3.13.0-amd64.exe"
 
-# Check if WinRM is enabled and enable it if necessary
-Enable-PSRemoting -Force  # Enables WinRM on the local computer, configures necessary firewall rules and services
+Write-Host "Downloading Python 3.13 installer..."
+Invoke-WebRequest -Uri $pythonInstallerUrl -OutFile $pythonInstallerPath
 
-# Configure firewall rules to allow WinRM connections
-New-NetFirewallRule -DisplayName "WinRM Public" -Name "WinRM-HTTP-In-TCP-PUBLIC" -Enabled True -Direction Inbound -Protocol TCP -LocalPort 5986 -Action Allow
+Write-Host "Installing Python 3.13..."
+Start-Process -FilePath $pythonInstallerPath -ArgumentList "/quiet InstallAllUsers=1 PrependPath=1 Include_test=0" -Wait
 
-# Add WinRM to env path... Windows :)
-$currentPath = [System.Environment]::GetEnvironmentVariable('PATH', [System.EnvironmentVariableTarget]::Machine)
-if ($currentPath -notlike "*WindowsPowerShell\v1.0*") {
-    [System.Environment]::SetEnvironmentVariable('PATH', "$currentPath;C:\Windows\System32\WindowsPowerShell\v1.0", [System.EnvironmentVariableTarget]::Machine)
-}
+# 2. Install and configure OpenSSH Server
+Write-Host "Installing OpenSSH Server..."
+Add-WindowsCapability -Online -Name OpenSSH.Server~~~~0.0.1.0
 
-# Check WinRM connection to a remote user
-$hostname = "localhost"  # IP address or hostname of the remote system
+Write-Host "Starting and enabling sshd service..."
+Start-Service sshd
+Set-Service -Name sshd -StartupType 'Automatic'
 
-# Turn on Basic authentiaction
-winrm set winrm/config/client/auth '@{Basic="true"}'
-winrm set winrm/config/service/auth '@{Basic="true"}'
+# 3. Allow incoming SSH traffic on port 22
+Write-Host "Adding firewall rule for SSH..."
+New-NetFirewallRule -Name "OpenSSH-Server-In-TCP" -DisplayName "OpenSSH Server (TCP-In)" -Enabled True -Direction Inbound -Protocol TCP -Action Allow -LocalPort 22
 
-# Create credentials for testing the connection
-$credentials = New-Object System.Management.Automation.PSCredential ($Username, $Password)  # Create credentials object
+Write-Host "Python 3.13 has been installed and SSH is enabled!"
+Write-Host "You can now connect to: $env:COMPUTERNAME (IP: $(Get-NetIPAddress -AddressFamily IPv4 | Where-Object {$_.InterfaceAlias -notlike '*Loopback*'} | Select-Object -First 1 -ExpandProperty IPAddress))"
 
-# Test WinRM connection to the remote system
-Test-WsMan -ComputerName $hostname -Credential $credentials -Authentication Default # Test the WinRM connection using provided credentials

@@ -30,7 +30,7 @@ services:
       - CONTAINERS=1 # Allow access to viewing containers
       - SERVICES=1 # Allow access to viewing services (necessary when using Docker Swarm)
       - TASKS=1 # Allow access to viewing tasks (necessary when using Docker Swarm)
-      - POST=0 # Disallow any POST operations (effectively read-only)
+      - POST=1 # Disallow any POST operations (effectively read-only)
     ports:
       - 127.0.0.1:2375:2375
     volumes:
@@ -46,4 +46,17 @@ services:
       - ~/homepage_config:/app/config
     ports:
       - 3000:3000
+    restart: unless-stopped
+
+  watchtower:
+    image: containrrr/watchtower:latest
+    container_name: watchtower
+    environment:
+      - DOCKER_HOST=tcp://dockerproxy:2375
+      - WATCHTOWER_CLEANUP=true
+      - WATCHTOWER_LABEL_ENABLE=true # opcjonalnie: tylko kontenery z labelami będą aktualizowane
+      - TZ=Europe/Warsaw
+    volumes:
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
     restart: unless-stopped

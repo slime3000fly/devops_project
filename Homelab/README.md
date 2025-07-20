@@ -30,3 +30,5 @@ docker inspect \
 # TODO:
 - add homepage for entire setup
 - add nas server
+
+![My Homelab Netwrok](Network_diagram.png "My Homelab Netwrok")
